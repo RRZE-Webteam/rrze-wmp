@@ -211,4 +211,7 @@ function loaded()
 
     // If there are no errors, create an instance of the 'Main' class and trigger its 'loaded' method.
     (new Main)->loaded();
+
+    //$member = new Member(18, "Hans");
+
 }

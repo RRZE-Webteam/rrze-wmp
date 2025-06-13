@@ -44,10 +44,8 @@ class Options
      */
     protected static function defaultOptions(): array
     {
-        $options = [
-            'checkbox_1' => 0,
-            'textfield_1' => '',
-            'textarea_1' => '',
+        return [
+            'cache_duration' => 3600, // 1 Stunde
         ];
 
         return $options;

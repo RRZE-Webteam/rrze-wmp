@@ -1,0 +1,81 @@
+{
+  "id": "4828",
+  "server": "cmslb.rrze.uni-erlangen.de",
+  "servername": "www.wp.rrze.fau.de",
+  "serveradmin": "webmaster@example.phil.fau.de",
+  "serveralias": [
+    "testseite.phil.fau.de",
+    "www.testseite.uni-erlangen.de",
+    "webservice.rrze.de",
+    "webservice.rrze.fau.de",
+    "webservice.rrze.uni-erlangen.de",
+    "wordpress.cms.rrze.de",
+    "wordpress.cms.rrze.fau.de",
+    "wordpress.cms.rrze.uni-erlangen.de",
+    "wordpress.rrze.de",
+    "wordpress.rrze.fau.de",
+    "wordpress.rrze.uni-erlangen.de",
+    "wp-doku.rrze.de",
+    "wp-doku.rrze.fau.de",
+    "wp-doku.rrze.uni-erlangen.de",
+    "wp.rrze.de",
+    "wp.rrze.fau.de",
+    "wp.rrze.uni-erlangen.de",
+    "www.webservice.rrze.de",
+    "www.webservice.rrze.fau.de",
+    "www.webservice.rrze.uni-erlangen.de",
+    "www.wordpress.cms.rrze.de",
+    "www.wordpress.cms.rrze.uni-erlangen.de",
+    "www.wordpress.rrze.de",
+    "www.wordpress.rrze.fau.de",
+    "www.wordpress.rrze.uni-erlangen.de",
+    "www.wp-doku.rrze.de",
+    "www.wp-doku.rrze.fau.de",
+    "www.wp-doku.rrze.uni-erlangen.de",
+    "www.wp.rrze.de",
+    "www.wp.rrze.fau.de",
+    "www.wp.rrze.uni-erlangen.de"
+  ],
+  "status": 4,
+  "aktiv": 1,
+  "aktivseit": "2015-05-04T09:49:05+02:00",
+  "inaktivseit": false,
+  "virtualhostextrafields": "",
+  "instanz": {
+    "hostname": "wordpress.cms.rrze.uni-erlangen.de",
+    "primary_domain": "www.wp.rrze.fau.de",
+    "title": "www.wp.rrze.fau.de",
+    "fauidmkennung": "unrz59",
+    "fauemailaddress": "wolfgang.wiese@fau.de",
+    "fauidmactive": 1,
+    "faurealname": "Wolfgang Wiese",
+    "givenname": "Wolfgang",
+    "surname": "Wiese",
+    "fauanrede": "",
+    "dienste": {
+      "0": "webcms",
+      "1": "euinfodo"
+    }
+  },
+    "persons": {
+      "responsible": {
+        "name": "Wolfgang Wiese",
+        "givenname": "Wolfgang",
+        "surname": "Wiese",
+        "email": "wolfgang.wiese@fau.de"
+      },
+      "webmaster": {
+        "name": "Wolfgang Wiese",
+        "givenname": "Wolfgang",
+        "surname": "Wiese",
+        "email": "wolfgang.wiese@fau.de"
+      }
+    }
+
+}
+
+
+
+
+
+
