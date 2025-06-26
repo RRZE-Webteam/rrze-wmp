@@ -1,12 +1,13 @@
 <?php
+
 namespace RRZE\WMP;
 
 defined('ABSPATH') || exit;
 
 /**
- * WMP Übersichtsseite
+ * WMP Overview Page
  *
- * Zeigt ausführliche WMP-Informationen an
+ * Shows detailed WMP information
  *
  * @package RRZE\WMP
  * @since 1.0.0
@@ -19,7 +20,7 @@ class Overview
     protected $apiClient;
 
     /**
-     * Menu page slug für die WMP-Übersichtsseite
+     * Menu page slug for WMP Overview
      *
      * @var string
      */
@@ -47,29 +48,31 @@ class Overview
     }
 
     /**
-     * Admin-Menü hinzufügen
+     * Add Admin Menu
      *
      * @return void
      */
     public function adminMenu()
     {
         add_menu_page(
-            __('WMP Overview', 'rrze-wmp'),    // Seitentitel
-            __('WMP', 'rrze-wmp'),             // Menütitel
-            'manage_options',                   // Berechtigung
-            $this->menuPage,                   // Slug
-            [$this, 'overviewPage'],          // Callback
-            'dashicons-admin-site-alt3',      // Icon
-            30                                 // Position
+            __('WMP Overview', 'rrze-wmp'),
+            __('WMP', 'rrze-wmp'),
+            'manage_options',
+            $this->menuPage,
+            [$this, 'overviewPage'],
+            'dashicons-admin-site-alt3',
+            30
         );
     }
 
     /**
-     * WMP-Übersichtsseite anzeigen
+     * Show WMP-Overview
      *
      * @return void
      */
     public function overviewPage()
+
+
     {
         $currentDomain = Helper::retrieveSiteUrl();
 
@@ -96,32 +99,54 @@ class Overview
     }
 
     /**
-     * Detaillierte WMP-Datenansicht rendern
+     * Render detailed WMP data view
      *
-     * @param array $data WMP-Daten
+     * @param array $data WMP data
      * @return void
      */
     protected function renderDetailedView(array $data)
     {
-        echo '<div class="rrze-wmp-overview">';
 
-        // Server-Informationen
-        echo '<div class="rrze-wmp-section">';
-        echo '<h3>' . __('Server Information', 'rrze-wmp') . '</h3>';
-        echo '<table class="widefat">';
-        echo '<tr><td><strong>' . __('Server', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['server'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td><strong>' . __('Domain', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['servername'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td><strong>' . __('Webmaster', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['serveradmin'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td><strong>' . __('Status', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['status'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td><strong>' . __('Active since', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['aktiv'] ?? 'N/A') . '</td></tr>';
+        // Container
+        echo '<div class="rrze-wmp-layout-container">';
+
+        // Basic Information
+        echo '<div class="rrze-wmp-section rrze-wmp-basic-content">';
+        echo '<h3>' . __('Basic Information', 'rrze-wmp') . '</h3>';
+        echo '<table class="rrze-wmp-overview-table">';
+        echo '<tr><td><strong>' . __('ID:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['id'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td><strong>' . __('Server Name:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data ['servername']) . '</td></tr>';
+        echo '<tr><td><strong>' . __('Server:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['server'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td><strong>' . __('Primary Domain:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data ['instanz']['primary_domain']) . '</td></tr>';
+        echo '<tr><td><strong>' . __('Website Title:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data ['instanz']['title']) . '</td></tr>';
+        echo '<tr><td><strong>' . __('Responsible:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['persons']['responsible']['name'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td><strong>' . __('Responsible Email:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['persons']['responsible']['email'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td><strong>' . __('Webmaster:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['persons']['webmaster']['name'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td><strong>' . __('Webmaster Email:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['persons']['webmaster']['email'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td><strong>' . __('Active since:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['aktivseit'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td><strong>' . __('Dienste:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['instanz']['dienste']['0'] ?? 'N/A') . '</td></tr>';
         echo '</table>';
         echo '</div>';
 
-        // Domain-Aliase
+
+
+        // Contact Box
+        echo '<div class="rrze-wmp-section rrze-wmp-contact">';
+        echo '<h3>' . __('Website Support', 'rrze-wmp') . '</h3>';
+        echo '<div class="rrze-wmp-contact-box">';
+        echo '<p>' . __('You need help with your website? Contact our webmasters!', 'rrze-wmp') . '</p>';
+        echo '<a href="mailto:webmaster@fau.de" class="button button-primary">' . __('Contact Support', 'rrze-wmp') . '</a>';
+        echo '</div>';
+        echo '</div>';
+
+
+        echo '</div>';
+
+        // Domain-Alias
         if (!empty($data['serveralias']) && is_array($data['serveralias'])) {
             echo '<div class="rrze-wmp-section">';
             echo '<h3>' . __('Domain Aliases', 'rrze-wmp') . '</h3>';
-            echo '<ul>';
+            echo '<ul class="overview-list">';
             foreach ($data['serveralias'] as $alias) {
                 echo '<li>' . esc_html($alias) . '</li>';
             }
@@ -129,58 +154,20 @@ class Overview
             echo '</div>';
         }
 
-        // Instanz-Informationen
-        if (!empty($data['instanz']) && is_array($data['instanz'])) {
+
+        // Booked Services
+        if (!empty($data['instanz']['dienste']) && is_array($data['instanz']['dienste'])) {
             echo '<div class="rrze-wmp-section">';
-            echo '<h3>' . __('Instance Information', 'rrze-wmp') . '</h3>';
-            echo '<table class="widefat">';
-
-            $instanz = $data['instanz'];
-            $fields = [
-                'hostname' => __('Hostname', 'rrze-wmp'),
-                'primary_domain' => __('Primary Domain', 'rrze-wmp'),
-                'title' => __('Title', 'rrze-wmp'),
-                'fauidmkennung' => __('FAU ID', 'rrze-wmp'),
-                'fauemailaddress' => __('Email', 'rrze-wmp'),
-                'faurealname' => __('Real Name', 'rrze-wmp'),
-                'givenname' => __('Given Name', 'rrze-wmp'),
-                'surname' => __('Surname', 'rrze-wmp'),
-            ];
-
-            foreach ($fields as $key => $label) {
-                if (!empty($instanz[$key])) {
-                    echo '<tr><td><strong>' . esc_html($label) . '</strong></td><td>' . esc_html($instanz[$key]) . '</td></tr>';
-                }
+            echo '<h3>' . __('Booked Services', 'rrze-wmp') . '</h3>';
+            echo '<ul class="overview-list">';
+            foreach ($data['instanz']['dienste'] as $dienst) {
+                echo '<li>' . esc_html($dienst) . '</li>';
             }
-
-            echo '</table>';
+            echo '</ul>';
             echo '</div>';
 
-            // Dienste
-            if (!empty($instanz['dienste']) && is_array($instanz['dienste'])) {
-                echo '<div class="rrze-wmp-section">';
-                echo '<h3>' . __('Services', 'rrze-wmp') . '</h3>';
-                echo '<ul>';
-                foreach ($instanz['dienste'] as $dienst) {
-                    echo '<li>' . esc_html($dienst) . '</li>';
-                }
-                echo '</ul>';
-                echo '</div>';
-            }
         }
-
-        echo '</div>';
     }
 
-    /**
-     * Aktuelle Domain ermitteln
-     *
-     * @return string|null
-     */
-    protected function getCurrentDomain(): ?string
-    {
-        $siteUrl = get_site_url();
-        $parsedUrl = parse_url($siteUrl);
-        return $parsedUrl['host'] ?? null;
-    }
+
 }

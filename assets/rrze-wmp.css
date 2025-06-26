@@ -1,0 +1,68 @@
+/*
+Dashboard Widget
+ */
+.rrze-wmp-widget-table td {
+    padding: 4px 0;
+}
+
+.rrze-wmp-widget-table td:last-child {
+    padding: 0 0 0 10px;
+}
+
+/*
+Overview Page
+ */
+.rrze-wmp-section {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    margin-bottom: 20px;
+    padding: 10px 20px 20px 20px;
+
+}
+
+.rrze-wmp-overview-table td {
+    padding: 4px 0;
+}
+
+.rrze-wmp-overview-table td:last-child {
+    padding: 0 0 0 12px;
+}
+
+.overview-list {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.overview-list li {
+    padding: 0 0 3px 0;
+}
+
+
+.rrze-wmp-layout-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+
+}
+
+.rrze-wmp-basic-content {
+    flex: 1;
+    min-width: 100px;
+}
+
+.rrze-wmp-contact {
+    flex: 1;
+    min-width: 100px;
+}
+
+.rrze-wmp-contact-box {
+    background: #f9f9f9;
+    padding: 5px 15px 20px 15px;
+    border-left: 4px solid #0073aa;
+}
+
+.rrze-wmp-contact-box p {
+    font-size: 14px;
+}

@@ -6,7 +6,7 @@ defined('ABSPATH') || exit;
 /**
  * WMP API Client
  *
- * Verwaltet die Verbindung zur WMP-API
+ * Manages the connection to the WMP API
  *
  * @package RRZE\WMP
  * @since 1.0.0
@@ -20,7 +20,7 @@ class ApiClient
 
 
     /**
-     * Domain-Daten von WMP API holen
+     * Get domain data from WMP API
      *
      * @param string $domain Domain-Name
      * @return array WMP-Daten
@@ -37,7 +37,7 @@ class ApiClient
                 'User-Agent' => 'RRZE-WMP-Plugin/' . plugin()->getVersion()
             ],
         ]);
-        // Fehlerbehandlung
+        // Error handling
         if (is_wp_error($response)) {
             return []; // oder throw new Exception()
         }

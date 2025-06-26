@@ -1,6 +1,7 @@
 <?php
 
 namespace RRZE\WMP;
+
 use RRZE\WMP\Helper;
 
 defined('ABSPATH') || exit;
@@ -17,12 +18,12 @@ defined('ABSPATH') || exit;
 class Main
 {
     /**
-     * @var Widget Dashboard Widget Instanz
+     * @var Widget Dashboard Widget Instance
      */
     protected $widget;
 
     /**
-     * @var Settings WMP-Übersichtsseite (umfunktionierte Settings)
+     * @var Settings WMP Overview Page
      */
     protected $apiClient;
 
@@ -41,11 +42,14 @@ class Main
         $this->apiClient = new ApiClient();
         $this->overview = new Overview();
 
-        //Main organisiert und registriert
+        //Main organises and registers
         add_action('wp_dashboard_setup', [$this, 'addDashboardWidget']);
         $this->widget = new Widget();
 
-//        // Admin-Styles laden
+        // Register styles
+        add_action('admin_enqueue_scripts', [$this, 'rrze_wmp_enqueue_styles']);
+
+//        // load Admin-Styles
 //        add_action('admin_enqueue_scripts', [$this, 'enqueueAdminAssets']);
 
 
@@ -53,7 +57,7 @@ class Main
 
     public function addDashboardWidget()
     {
-        //Main registriert das Widget
+        //Main registers tje widget
         wp_add_dashboard_widget(
             'rrze_wmp_widget',
             'WMP Domain Information',
@@ -61,16 +65,22 @@ class Main
         );
     }
 
-
-
-
-
-
-
-
-
-
+    /**
+     * Enqueue plugin styles
+     * Called by WordPress hook 'admin_enqueue_scripts'
+     */
+    function rrze_wmp_enqueue_styles(): void
+    {
+        wp_enqueue_style(
+            'rrze-wmp-styles',
+            plugin_dir_url(__FILE__) . '../assets/rrze-wmp.css',
+            array(),
+            '1.0.0'
+        );
     }
+
+
+}
 //        $beispiel = ['string1', 'string2', 'string3'];
 //        Helper::debug($beispiel);
 //

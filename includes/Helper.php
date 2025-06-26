@@ -30,9 +30,8 @@ class Helper
         if (self::isDebug()) {
             return "www.wp.rrze.fau.de";
         } else {
-            // Ansonsten die aktuelle Site-URL verwenden
             $siteUrl = get_site_url();
-            $parsedUrl=parse_url($siteUrl);
+            $parsedUrl = parse_url($siteUrl);
             return $parsedUrl['host'] ?? null;
         }
     }
@@ -51,7 +50,7 @@ class Helper
         if (!WP_DEBUG) {
             return;
         }
-        if (in_array(strtolower((string) WP_DEBUG_LOG), ['true', '1'], true)) {
+        if (in_array(strtolower((string)WP_DEBUG_LOG), ['true', '1'], true)) {
             $logPath = WP_CONTENT_DIR . '/debug.log';
         } elseif (is_string(WP_DEBUG_LOG)) {
             $logPath = WP_DEBUG_LOG;

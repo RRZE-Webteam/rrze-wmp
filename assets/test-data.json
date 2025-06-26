@@ -45,12 +45,12 @@
     "hostname": "wordpress.cms.rrze.uni-erlangen.de",
     "primary_domain": "www.wp.rrze.fau.de",
     "title": "www.wp.rrze.fau.de",
-    "fauidmkennung": "unrz59",
-    "fauemailaddress": "wolfgang.wiese@fau.de",
+    "fauidmkennung": "umsi59",
+    "fauemailaddress": "wolfi.weise@fau.de",
     "fauidmactive": 1,
-    "faurealname": "Wolfgang Wiese",
-    "givenname": "Wolfgang",
-    "surname": "Wiese",
+    "faurealname": "Wolfi Weise",
+    "givenname": "Wolfi",
+    "surname": "Weise",
     "fauanrede": "",
     "dienste": {
       "0": "webcms",
@@ -59,16 +59,16 @@
   },
     "persons": {
       "responsible": {
-        "name": "Wolfgang Wiese",
-        "givenname": "Wolfgang",
-        "surname": "Wiese",
-        "email": "wolfgang.wiese@fau.de"
+        "name": "Wolfi Weise",
+        "givenname": "Wolfi",
+        "surname": "Weise",
+        "email": "wolfi.weise@fau.de"
       },
       "webmaster": {
-        "name": "Wolfgang Wiese",
-        "givenname": "Wolfgang",
-        "surname": "Wiese",
-        "email": "wolfgang.wiese@fau.de"
+        "name": "Luki Schlau",
+        "givenname": "Luki",
+        "surname": "Schlau",
+        "email": "Luki.schlau@fau.de"
       }
     }
 
