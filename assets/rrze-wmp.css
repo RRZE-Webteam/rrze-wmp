@@ -29,13 +29,13 @@ Overview Page
     padding: 0 0 0 12px;
 }
 
-.overview-list {
+.rrze-wmp-overview-list {
     list-style-type: disc;
     margin-left: 20px;
     padding-left: 0;
 }
 
-.overview-list li {
+.rrze-wmp-overview-list li {
     padding: 0 0 3px 0;
 }
 
@@ -60,7 +60,7 @@ Overview Page
 .rrze-wmp-contact-box {
     background: #f9f9f9;
     padding: 5px 15px 20px 15px;
-    border-left: 4px solid #0073aa;
+
 }
 
 .rrze-wmp-contact-box p {

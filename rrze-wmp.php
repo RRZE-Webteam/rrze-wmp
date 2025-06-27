@@ -27,7 +27,7 @@ defined('ABSPATH') || exit;
 
 /**
  * SPL Autoloader (PSR-4).
- * 
+ *
  * This autoloader function is registered with the SPL autoload stack to automatically load classes
  * from the plugin's 'includes' directory based on their fully-qualified class names.
  * It follows the PSR-4 autoloading standard, where the namespace corresponds to the directory structure.
@@ -36,7 +36,7 @@ defined('ABSPATH') || exit;
  * This autoloader is particularly useful for organizing plugin code into classes and namespaces,
  * promoting better code structure and maintainability.
  * Use require_once `vendor/autoload.php` instead if you are using Composer for autoloading.
- * 
+ *
  * @see https://www.php-fig.org/psr/psr-4/
  * @param string $class The fully-qualified class name.
  * @return void
@@ -74,7 +74,7 @@ add_action('plugins_loaded', __NAMESPACE__ . '\loaded');
 
 /**
  * Activation callback function.
- * 
+ *
  * @return void
  */
 function activation()
@@ -115,7 +115,7 @@ function plugin()
 
 /**
  * Callback function to load the plugin textdomain.
- * 
+ *
  * @return void
  */
 function load_textdomain()
@@ -143,7 +143,7 @@ function systemRequirements(): string
     // Check if the WordPress version is compatible with the plugin's requirement.
     if (version_compare(get_bloginfo('version'), plugin()->getRequiresWP(), '<')) {
         $error = sprintf(
-            /* translators: 1: Server WordPress version number, 2: Required WordPress version number. */
+        /* translators: 1: Server WordPress version number, 2: Required WordPress version number. */
             __('The server is running WordPress version %1$s. The plugin requires at least WordPress version %2$s.', 'rrze-wmp'),
             get_bloginfo('version'),
             plugin()->getRequiresWP()
@@ -151,7 +151,7 @@ function systemRequirements(): string
     } elseif (version_compare(PHP_VERSION, plugin()->getRequiresPHP(), '<')) {
         // Check if the PHP version is compatible with the plugin's requirement.
         $error = sprintf(
-            /* translators: 1: Server PHP version number, 2: Required PHP version number. */
+        /* translators: 1: Server PHP version number, 2: Required PHP version number. */
             __('The server is running PHP version %1$s. The plugin requires at least PHP version %2$s.', 'rrze-wmp'),
             PHP_VERSION,
             plugin()->getRequiresPHP()
@@ -195,9 +195,9 @@ function loaded()
                 add_action($tag, function () use ($pluginName, $error) {
                     printf(
                         '<div class="notice notice-error"><p>' .
-                            /* translators: 1: The plugin name, 2: The error string. */
-                            esc_html__('Plugins: %1$s: %2$s', 'rrze-wmp') .
-                            '</p></div>',
+                        /* translators: 1: The plugin name, 2: The error string. */
+                        esc_html__('Plugins: %1$s: %2$s', 'rrze-wmp') .
+                        '</p></div>',
                         $pluginName,
                         $error
                     );

@@ -46,7 +46,7 @@ class Widget
             $data = $this->apiClient->getDomainData($currentDomain);
             $this->renderWidgetContent($data, $currentDomain);
         } catch (Exception $e) {
-            echo '<div class="rrze-wmp-error">';
+            echo '<div>';
             echo '<p><strong>' . __('Error loading WMP data:', 'rrze-wmp') . '</strong></p>';
             echo '<p>' . esc_html($e->getMessage()) . '</p>';
             echo '</div>';
@@ -67,7 +67,8 @@ class Widget
         // Basic information
         echo '<table class="rrze-wmp-widget-table">';
         echo '<tr><td><strong>' . __('ID:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['id'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td><strong>' . __('Domain:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data ['servername']) . '</td></tr>';
+        echo '<tr><td><strong>' . __('Customer number:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['instanz']['kunu'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td><strong>' . __('Domain:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data ['servername'] ?? 'N/A') . '</td></tr>';
         echo '<tr><td><strong>' . __('Server:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['server'] ?? 'N/A') . '</td></tr>';
         echo '<tr><td><strong>' . __('Responsible:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['persons']['responsible']['name'] ?? 'N/A') . '</td></tr>';
         echo '<tr><td><strong>' . __('Responsible-Email:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['persons']['responsible']['email'] ?? 'N/A') . '</td></tr>';
@@ -98,7 +99,7 @@ class Widget
 
     protected function getCurrentDomain()
     {
-        return Helper::retrieveSiteUrl('some_type');
+        return Helper::retrieveSiteUrl();
     }
 
 }

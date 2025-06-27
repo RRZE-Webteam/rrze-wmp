@@ -22,10 +22,7 @@ class Main
      */
     protected $widget;
 
-    /**
-     * @var Settings WMP Overview Page
-     */
-    protected $apiClient;
+
 
 
     /**
@@ -39,7 +36,6 @@ class Main
     public function loaded()
     {
         $this->widget = new Widget();
-        $this->apiClient = new ApiClient();
         $this->overview = new Overview();
 
         //Main organises and registers
@@ -57,11 +53,11 @@ class Main
 
     public function addDashboardWidget()
     {
-        //Main registers tje widget
+        //Main registers the widget
         wp_add_dashboard_widget(
             'rrze_wmp_widget',
-            'WMP Domain Information',
-            [$this->widget, 'render'] //Widget rendert nur
+            'RRZE WMP Domain Information',
+            [$this->widget, 'render']
         );
     }
 
@@ -69,7 +65,7 @@ class Main
      * Enqueue plugin styles
      * Called by WordPress hook 'admin_enqueue_scripts'
      */
-    function rrze_wmp_enqueue_styles(): void
+    public function rrze_wmp_enqueue_styles(): void
     {
         wp_enqueue_style(
             'rrze-wmp-styles',
@@ -81,76 +77,3 @@ class Main
 
 
 }
-//        $beispiel = ['string1', 'string2', 'string3'];
-//        Helper::debug($beispiel);
-//
-//        // Optionally, you can load the plugin's options here.
-//        // This can be useful if you need to access the options early in the plugin lifecycle.
-//        $this->options = (object) Options::getOptions();
-//        add_filter('plugin_action_links_' . plugin()->getBaseName(), [$this, 'settingsLink']);
-//
-//        $this->settings = new Settings();
-//        // error_log(print_r($this->settings, true));
-//
-//
-//        // Initialize other modules or components as needed.
-//        // For example, you can initialize a custom post type, taxonomy, or any other functionality.
-//        // $this->initCustomPostType();
-//        // $this->initTaxonomy();
-//    }
-
-//    /**
-//     * Add a settings link to the plugin action links.
-//     *
-//     * @param array $links
-//     * @return array
-//     */
-//    public function settingsLink($links)
-//    {
-//        $settingsLink = sprintf(
-//            '<a href="%s">%s</a>',
-//            admin_url('options-general.php?page=' . $this->settings->getMenuPage()),
-//            __('Settings', 'rrze-wmp')
-//        );
-//        array_unshift($links, $settingsLink);
-//        return $links;
-//    }
-//}
-
-//class Member
-//{
-//    private $age; // 18
-//    private $name; // Hans
-//
-//    /**
-//     * Runs every time the class is instanticated
-//     * @param $age int
-//     * @param $name string
-//     */
-//    public function __construct($age=30, $name = "Mensch"){
-//        $this->age = $age;
-//        $this->name = $name;
-//    }
-//
-//    //getter
-//    public function getAge()
-//    {
-//        return $this->age;
-//    }
-//
-//    public function getName()
-//    {
-//        return $this->name;
-//    }
-//
-//    //setter
-//    public function setAge($age)
-//    {
-//        $this->age = $age;
-//    }
-//
-//    public function setName($name)
-//    {
-//        $this->name = $name;
-//    }
-//}

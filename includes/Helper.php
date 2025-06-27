@@ -38,11 +38,7 @@ class Helper
 
     public static function isDebug()
     {
-        if (defined('WP_DEBUG') && WP_DEBUG) {
-            return true; // Debug ON
-        } else {
-            return false; // Debug OFF
-        }
+        return defined('WP_DEBUG') && WP_DEBUG;
     }
 
     public static function debug($input, string $level = 'i')

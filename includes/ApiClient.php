@@ -27,28 +27,37 @@ class ApiClient
      */
     public function getDomainData(string $domain): array
     {
-        // API-Aufruf
+        if (Helper::isDebug()) {
+            // Debug-Modus: Lade lokale JSON-Datei
+            $asset_path = plugin_dir_path(__DIR__) . 'assets/test-data.json';
+            if (file_exists($asset_path)) {
+                $dummy = file_get_contents($asset_path);
+                $data = json_decode($dummy, true);
+                Helper::debug('Daten aus test-data.json geladen');
+                return $data ?? [];
+            } else {
+                Helper::debug('Fehler: test-data.json nicht gefunden', 'error');
+                return [];
+            }
+        }
+
+        // Produktiv-Modus: Hole echte Daten von API
         $url = $this->baseUrl . urlencode($domain);
-
-
         $response = wp_safe_remote_get($url, [
             'timeout' => 10,
             'headers' => [
                 'User-Agent' => 'RRZE-WMP-Plugin/' . plugin()->getVersion()
             ],
         ]);
-        // Error handling
+
         if (is_wp_error($response)) {
-            return []; // oder throw new Exception()
+            Helper::debug('Fehler beim API-Aufruf: ' . $response->get_error_message(), 'error');
+            return [];
         }
 
         $body = wp_remote_retrieve_body($response);
-        $asset_path = plugin_dir_path( __DIR__ ) . 'assets/test-data.json';
-        $dummy = file_get_contents( $asset_path );
-        $data = json_decode($dummy, true);
+        $data = json_decode($body, true);
         Helper::debug($data);
-
         return $data ?? [];
     }
 }
-
