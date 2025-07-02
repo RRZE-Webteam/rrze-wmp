@@ -114,29 +114,29 @@ class Overview
         echo '<div class="rrze-wmp-section rrze-wmp-basic-content">';
         echo '<h3>' . __('Basic Information', 'rrze-wmp') . '</h3>';
         echo '<table class="rrze-wmp-overview-table">';
-        echo '<tr><td><strong>' . __('ID:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['id'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td><strong>' . __('Customer number:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['instanz']['kunu'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td><strong>' . __('Server Name:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data ['servername'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td><strong>' . __('Server:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['server'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td><strong>' . __('Primary Domain:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data ['instanz']['primary_domain']) . '</td></tr>';
-        echo '<tr><td><strong>' . __('Website Title:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data ['instanz']['title'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td><strong>' . __('Responsible:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['persons']['responsible']['name'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td><strong>' . __('Responsible Email:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['persons']['responsible']['email'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td><strong>' . __('Webmaster:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['persons']['webmaster']['name'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td><strong>' . __('Webmaster Email:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['persons']['webmaster']['email'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td><strong>' . __('Active since:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['aktivseit'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td>' . __('ID:', 'rrze-wmp') . '</td><td>' . esc_html($data['id'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td>' . __('Customer number:', 'rrze-wmp') . '</td><td>' . esc_html($data['instanz']['kunu'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td>' . __('Server Name:', 'rrze-wmp') . '</td><td>' . esc_html($data ['servername'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td>' . __('Server:', 'rrze-wmp') . '</td><td>' . esc_html($data['server'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td>' . __('Primary Domain:', 'rrze-wmp') . '</td><td>' . esc_html($data ['instanz']['primary_domain']) . '</td></tr>';
+        echo '<tr><td>' . __('Website Title:', 'rrze-wmp') . '</td><td>' . esc_html($data ['instanz']['title'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td>' . __('Responsible:', 'rrze-wmp') . '</td><td>' . esc_html($data['persons']['responsible']['name'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td>' . __('Responsible Email:', 'rrze-wmp') . '</td><td>' . esc_html($data['persons']['responsible']['email'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td>' . __('Webmaster:', 'rrze-wmp') . '</td><td>' . esc_html($data['persons']['webmaster']['name'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td>' . __('Webmaster Email:', 'rrze-wmp') . '</td><td>' . esc_html($data['persons']['webmaster']['email'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td>' . __('Active since:', 'rrze-wmp') . '</td><td>' . esc_html($data['aktivseit'] ?? 'N/A') . '</td></tr>';
         echo '</table>';
         echo '</div>';
 
 
         // Contact Box
         echo '<div class="rrze-wmp-section rrze-wmp-contact">';
-        echo '<h3>' . __('Website Support', 'rrze-wmp') . '</h3>';
+        echo '<h3>' . __('Web Support', 'rrze-wmp') . '</h3>';
         echo '<div class="rrze-wmp-contact-box">';
 
 
         echo '<p>' . __('You need help with your website? Please contact us!', 'rrze-wmp') . '</p>';
-        echo '<a href="mailto:webmaster@fau.de" class="button button-primary">' . __('Web Support', 'rrze-wmp') . '</a>';
+        echo '<a href="mailto:webmaster@fau.de" class="button button-primary">' . __('Contact', 'rrze-wmp') . '</a>';
 
 
         echo '</div>';

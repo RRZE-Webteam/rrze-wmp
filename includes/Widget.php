@@ -34,23 +34,14 @@ class Widget
      */
     public function render()
     {
-        // determine current domain
         $currentDomain = $this->getCurrentDomain();
 
-        if (!$currentDomain) {
+        if (empty($currentDomain)) {
             echo '<p>' . __('Could not determine current domain.', 'rrze-wmp') . '</p>';
             return;
         }
-
-        try {
-            $data = $this->apiClient->getDomainData($currentDomain);
-            $this->renderWidgetContent($data, $currentDomain);
-        } catch (Exception $e) {
-            echo '<div>';
-            echo '<p><strong>' . __('Error loading WMP data:', 'rrze-wmp') . '</strong></p>';
-            echo '<p>' . esc_html($e->getMessage()) . '</p>';
-            echo '</div>';
-        }
+        $data = $this->apiClient->getDomainData($currentDomain);
+        $this->renderWidgetContent($data, $currentDomain);
     }
 
     /**
@@ -66,22 +57,22 @@ class Widget
 
         // Basic information
         echo '<table class="rrze-wmp-widget-table">';
-        echo '<tr><td><strong>' . __('ID:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['id'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td><strong>' . __('Customer number:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['instanz']['kunu'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td><strong>' . __('Domain:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data ['servername'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td><strong>' . __('Server:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['server'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td><strong>' . __('Responsible:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['persons']['responsible']['name'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td><strong>' . __('Responsible-Email:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['persons']['responsible']['email'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td><strong>' . __('Webmaster:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['persons']['webmaster']['name'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td><strong>' . __('Webmaster-Email:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['persons']['webmaster']['email'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td><strong>' . __('Active since:', 'rrze-wmp') . '</strong></td><td>' . esc_html($data['aktivseit'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td><strong>' . __('Dienste:', 'rrze-wmp') . '</strong></td><td>';
+        echo '<tr><td>' . __('ID:', 'rrze-wmp') . '</td><td>' . esc_html($data['id'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td>' . __('Customer number:', 'rrze-wmp') . '</td><td>' . esc_html($data['instanz']['kunu'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td>' . __('Domain:', 'rrze-wmp') . '</td><td>' . esc_html($data ['servername'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td>' . __('Server:', 'rrze-wmp') . '</td><td>' . esc_html($data['server'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td>' . __('Responsible:', 'rrze-wmp') . '</td><td>' . esc_html($data['persons']['responsible']['name'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td>' . __('Responsible-Email:', 'rrze-wmp') . '</td><td>' . esc_html($data['persons']['responsible']['email'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td>' . __('Webmaster:', 'rrze-wmp') . '</td><td>' . esc_html($data['persons']['webmaster']['name'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td>' . __('Webmaster-Email:', 'rrze-wmp') . '</td><td>' . esc_html($data['persons']['webmaster']['email'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td>' . __('Active since:', 'rrze-wmp') . '</td><td>' . esc_html($data['aktivseit'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td>' . __('Dienste:', 'rrze-wmp') . '</td><td>';
         if (!empty($data['instanz']['dienste']) && is_array($data['instanz']['dienste'])) {
             echo esc_html(implode(', ', $data['instanz']['dienste']));
         } else {
             echo 'N/A';
         }
-
+        echo '</td></tr>';
         echo '</table>';
 
         // Link to admin overview page
@@ -96,8 +87,7 @@ class Widget
      *
      * @return string|null
      */
-
-    protected function getCurrentDomain()
+    protected function getCurrentDomain(): string|null
     {
         return Helper::retrieveSiteUrl();
     }

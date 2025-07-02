@@ -16,7 +16,7 @@ class ApiClient
     /**
      * @var string WMP API Base URL
      */
-    protected $baseUrl = 'https://www.wmp.rrze.fau.de/api/cms/config/servername/';
+    protected string $baseUrl = 'https://www.wmp.rrze.fau.de/api/cms/config/servername/';
 
 
     /**
@@ -28,7 +28,7 @@ class ApiClient
     public function getDomainData(string $domain): array
     {
         if (Helper::isDebug()) {
-            // Debug-Modus: Lade lokale JSON-Datei
+            // Debug-Mode: Load local JSON
             $asset_path = plugin_dir_path(__DIR__) . 'assets/test-data.json';
             if (file_exists($asset_path)) {
                 $dummy = file_get_contents($asset_path);
@@ -41,7 +41,7 @@ class ApiClient
             }
         }
 
-        // Produktiv-Modus: Hole echte Daten von API
+        // get API data
         $url = $this->baseUrl . urlencode($domain);
         $response = wp_safe_remote_get($url, [
             'timeout' => 10,
@@ -57,7 +57,7 @@ class ApiClient
 
         $body = wp_remote_retrieve_body($response);
         $data = json_decode($body, true);
-        Helper::debug($data);
+        //Helper::debug($data);
         return $data ?? [];
     }
 }

@@ -13,19 +13,7 @@ class Helper
      * @param string $type
      * @return string
      */
-//    public static function retrieveSiteUrl($type)
-//    {
-//        $debug = self::isDebug();
-//        if ($debug === false) {
-//            $remove_char = ["https://", "http://", "/"];
-//            $url = str_replace($remove_char, "", $get_site_url());
-//        } else {
-//            $url = "www.wp.rrze.fau.de";
-//        }
-//        return $url;
-//    }
-
-    public static function retrieveSiteUrl()
+    public static function retrieveSiteUrl(): string|null
     {
         if (self::isDebug()) {
             return "www.wp.rrze.fau.de";
@@ -36,11 +24,32 @@ class Helper
         }
     }
 
+
+    /**
+     * Determine which url should be used and return the string
+     *
+     * @param string $type
+     * @return string
+     */
     public static function isDebug()
     {
         return defined('WP_DEBUG') && WP_DEBUG;
     }
 
+
+    /**
+     * Logs debug information to WordPress debug log file.
+     *
+     * Writes formatted debug messages to the WordPress debug log when WP_DEBUG
+     * is enabled. Supports different log levels (Error, Info, Debug) and handles
+     * arrays/objects by converting them to readable string format. Log entries
+     * include timestamp, level, filename and message content.
+     *
+     * @param mixed $input The data to log (string, array, object)
+     * @param string $level Log level: 'e'/'error', 'i'/'info', 'd'/'debug'
+     * @return void
+     * @since 1.0.0
+     */
     public static function debug($input, string $level = 'i')
     {
         if (!WP_DEBUG) {

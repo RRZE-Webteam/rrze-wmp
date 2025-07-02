@@ -5,9 +5,11 @@ Dashboard Widget
     padding: 4px 0;
 }
 
-.rrze-wmp-widget-table td:last-child {
-    padding: 0 0 0 10px;
+.rrze-wmp-widget-table td:first-child {
+    font-weight: bold;
+    padding: 0 10px 0 0;
 }
+
 
 /*
 Overview Page
@@ -18,15 +20,15 @@ Overview Page
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
     margin-bottom: 20px;
     padding: 10px 20px 20px 20px;
-
 }
 
 .rrze-wmp-overview-table td {
     padding: 4px 0;
 }
 
-.rrze-wmp-overview-table td:last-child {
-    padding: 0 0 0 12px;
+.rrze-wmp-overview-table td:first-child {
+    font-weight: bold;
+    padding: 0 10px 0 0;
 }
 
 .rrze-wmp-overview-list {
@@ -39,12 +41,10 @@ Overview Page
     padding: 0 0 3px 0;
 }
 
-
 .rrze-wmp-layout-container {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-
 }
 
 .rrze-wmp-basic-content {
@@ -60,7 +60,6 @@ Overview Page
 .rrze-wmp-contact-box {
     background: #f9f9f9;
     padding: 5px 15px 20px 15px;
-
 }
 
 .rrze-wmp-contact-box p {

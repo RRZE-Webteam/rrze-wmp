@@ -23,8 +23,6 @@ class Main
     protected $widget;
 
 
-
-
     /**
      * Initialize the plugin.
      *
@@ -36,24 +34,23 @@ class Main
     public function loaded()
     {
         $this->widget = new Widget();
-        $this->overview = new Overview();
+        new Overview();
 
         //Main organises and registers
         add_action('wp_dashboard_setup', [$this, 'addDashboardWidget']);
-        $this->widget = new Widget();
 
         // Register styles
         add_action('admin_enqueue_scripts', [$this, 'rrze_wmp_enqueue_styles']);
 
-//        // load Admin-Styles
-//        add_action('admin_enqueue_scripts', [$this, 'enqueueAdminAssets']);
-
-
     }
 
+    /**
+     * Adds the dashboard widget
+     *
+     * @return void
+     */
     public function addDashboardWidget()
     {
-        //Main registers the widget
         wp_add_dashboard_widget(
             'rrze_wmp_widget',
             'RRZE WMP Domain Information',
@@ -75,5 +72,31 @@ class Main
         );
     }
 
+    /**
+     * *
+     * Retrieves domain data from WMP API with 24-hour caching.
+     * Checks for cached data first, returns it if available and not expired.
+     * If no cache exists, fetches fresh data from WMP API and stores it
+     * in transients for 24 hours to improve performance.
+     *
+     * @param string $domain The domain name to fetch data for
+     * @return array|false Domain data array on success, false on failure
+     * @since 1.0.0
+     */
+    private function get_domain_data($domain)
+    {
+        $transient_key = 'rrze_wmp_domain_' . md5($domain);
+        $cached_data = get_transient($transient_key);
+
+        if ($cached_data !== false) {
+            return $cached_data;
+        }
+
+        $api_data = $this->call_wmp_api($domain);
+
+        set_transient($transient_key, $api_data, DAY_IN_SECONDS);
+
+        return $api_data;
+    }
 
 }
