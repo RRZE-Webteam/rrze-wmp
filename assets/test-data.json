@@ -56,7 +56,8 @@
     "dienste": {
       "0": "webcms",
       "1": "dedomain"
-    }
+    },
+    "adminemail":	"webmaster-inflammation-research-erlangen-de@rrze.de"
   },
     "persons": {
       "responsible": {

@@ -33,8 +33,9 @@ class Main
      */
     public function loaded()
     {
-        $this->widget = new Widget();
-        new Overview();
+        $this->apiClient = new ApiClient();
+        $this->widget = new Widget($this->apiClient);
+        $this->overview = new Overview($this->apiClient);
 
         //Main organises and registers
         add_action('wp_dashboard_setup', [$this, 'addDashboardWidget']);

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: RRZE WMP\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-01 14:34+0000\n"
-"PO-Revision-Date: 2025-07-01 14:56+0000\n"
+"PO-Revision-Date: 2025-07-04 09:09+0000\n"
 "Last-Translator: \n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -27,9 +27,13 @@ msgstr "Aktiv seit:"
 msgid "Basic Information"
 msgstr "Basis Informationen"
 
-#: includes/Overview.php:164
+#: includes/Overview.php:165
 msgid "Booked Services"
-msgstr "Gebuchte Services"
+msgstr "Gebuchte Dienste"
+
+#: includes/Overview.php:139
+msgid "Contact"
+msgstr "Kontakt"
 
 #: includes/Overview.php:83 includes/Widget.php:40
 msgid "Could not determine current domain."
@@ -43,7 +47,7 @@ msgstr "Kundennummer:"
 msgid "Dienste:"
 msgstr "Services:"
 
-#: includes/Overview.php:151
+#: includes/Overview.php:152
 msgid "Domain Aliases"
 msgstr "Domain Aliasse"
 
@@ -57,11 +61,11 @@ msgstr "https://blogs.fau.de/webworking/"
 
 #. URI of the plugin
 msgid "https://github.com/RRZE-Webteam/rrze-wmp"
-msgstr ""
+msgstr "https://github.com/RRZE-Webteam/rrze-wmp"
 
 #: includes/Overview.php:117 includes/Widget.php:60
 msgid "ID:"
-msgstr ""
+msgstr "ID:"
 
 #: includes/Overview.php:90
 #, php-format
@@ -122,6 +126,10 @@ msgstr "Server Name:"
 msgid "Server:"
 msgstr "Server:"
 
+#: includes/Overview.php:140
+msgid "Support Team"
+msgstr "Sup Team"
+
 #. 1: Server PHP version number, 2: Required PHP version number.
 #: rrze-wmp.php:155
 #, php-format
@@ -142,7 +150,8 @@ msgstr ""
 "Auf dem Server läuft WordPress Version %1$s. Das Plugin benötigt mindestens "
 "die WordPress-Version %2$s."
 
-#: includes/Overview.php:139
+#: includes/Overview.php:134
+#| msgid "Website Support"
 msgid "Web Support"
 msgstr "Web Support"
 
@@ -158,13 +167,9 @@ msgstr "Webmaster Email:"
 msgid "Webmaster:"
 msgstr "Webmaster:"
 
-#: includes/Overview.php:134
-msgid "Website Support"
-msgstr "Website Support"
-
 #: includes/Overview.php:122
 msgid "Website Title:"
-msgstr "Webseiten Titel"
+msgstr "Website Titel:"
 
 #: includes/Overview.php:59
 msgid "WMP Overview"

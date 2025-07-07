@@ -1,4 +1,5 @@
 <?php
+
 namespace RRZE\WMP;
 
 defined('ABSPATH') || exit;
@@ -27,22 +28,22 @@ class ApiClient
      */
     public function getDomainData(string $domain): array
     {
-        if (Helper::isDebug()) {
-            // Debug-Mode: Load local JSON
-            $asset_path = plugin_dir_path(__DIR__) . 'assets/test-data.json';
-            if (file_exists($asset_path)) {
-                $dummy = file_get_contents($asset_path);
-                $data = json_decode($dummy, true);
-                Helper::debug('Daten aus test-data.json geladen');
-                return $data ?? [];
-            } else {
-                Helper::debug('Fehler: test-data.json nicht gefunden', 'error');
-                return [];
-            }
-        }
+//        if (Helper::isDebug()) {
+////            // Debug-Mode: Load local JSON
+////            $asset_path = plugin_dir_path(__DIR__) . 'assets/test-data.json';
+////            if (file_exists($asset_path)) {
+////                $dummy = file_get_contents($asset_path);
+////                $data = json_decode($dummy, true);
+////                Helper::debug('Daten aus test-data.json geladen');
+////                return $data ?? [];
+////            } else {
+////                Helper::debug('Fehler: test-data.json nicht gefunden', 'error');
+////                return [];
+////            }
 
         // get API data
         $url = $this->baseUrl . urlencode($domain);
+
         $response = wp_safe_remote_get($url, [
             'timeout' => 10,
             'headers' => [
@@ -57,7 +58,15 @@ class ApiClient
 
         $body = wp_remote_retrieve_body($response);
         $data = json_decode($body, true);
-        //Helper::debug($data);
-        return $data ?? [];
+
+        // Extract first (and only) entry from API response
+        if (is_array($data) && !empty($data)) {
+            $firstEntry = reset($data); // Gets first array element
+            return $firstEntry;
+        }
+
+
+        return [];
     }
+
 }

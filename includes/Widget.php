@@ -20,11 +20,12 @@ class Widget
     protected $apiClient;
 
     /**
-     * Constructor
+     * Constructor for the Widget class.
+     * The shared ApiClient instance is passed in from the outside.
      */
-    public function __construct()
+    public function __construct(ApiClient $apiClient)
     {
-        $this->apiClient = new ApiClient();
+        $this->apiClient = $apiClient;
     }
 
     /**
@@ -53,6 +54,14 @@ class Widget
      */
     protected function renderWidgetContent(array $data, string $domain)
     {
+        $aktivseit = $data['aktivseit'] ?? 'N/A';
+        if ($aktivseit !== 'N/A') {
+            $date = new \DateTime($aktivseit);
+            $formatted_date = $date->format('d.m.Y');
+        } else {
+            $formatted_date = 'N/A';
+        }
+
         echo '<div class="rrze-wmp-widget">';
 
         // Basic information
@@ -61,12 +70,13 @@ class Widget
         echo '<tr><td>' . __('Customer number:', 'rrze-wmp') . '</td><td>' . esc_html($data['instanz']['kunu'] ?? 'N/A') . '</td></tr>';
         echo '<tr><td>' . __('Domain:', 'rrze-wmp') . '</td><td>' . esc_html($data ['servername'] ?? 'N/A') . '</td></tr>';
         echo '<tr><td>' . __('Server:', 'rrze-wmp') . '</td><td>' . esc_html($data['server'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td>' . __('Administration Email:', 'rrze-wmp') . '</td><td>' . esc_html($data ['instanz']['adminemail'] ?? 'N/A') . '</td></tr>';
         echo '<tr><td>' . __('Responsible:', 'rrze-wmp') . '</td><td>' . esc_html($data['persons']['responsible']['name'] ?? 'N/A') . '</td></tr>';
         echo '<tr><td>' . __('Responsible-Email:', 'rrze-wmp') . '</td><td>' . esc_html($data['persons']['responsible']['email'] ?? 'N/A') . '</td></tr>';
         echo '<tr><td>' . __('Webmaster:', 'rrze-wmp') . '</td><td>' . esc_html($data['persons']['webmaster']['name'] ?? 'N/A') . '</td></tr>';
         echo '<tr><td>' . __('Webmaster-Email:', 'rrze-wmp') . '</td><td>' . esc_html($data['persons']['webmaster']['email'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td>' . __('Active since:', 'rrze-wmp') . '</td><td>' . esc_html($data['aktivseit'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td>' . __('Dienste:', 'rrze-wmp') . '</td><td>';
+        echo '<tr><td>' . __('Active since:', 'rrze-wmp') . '</td><td>' . esc_html($formatted_date) . '</td></tr>';
+        echo '<tr><td>' . __('Booked Services:', 'rrze-wmp') . '</td><td>';
         if (!empty($data['instanz']['dienste']) && is_array($data['instanz']['dienste'])) {
             echo esc_html(implode(', ', $data['instanz']['dienste']));
         } else {

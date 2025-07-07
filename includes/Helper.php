@@ -16,7 +16,7 @@ class Helper
     public static function retrieveSiteUrl(): string|null
     {
         if (self::isDebug()) {
-            return "www.wp.rrze.fau.de";
+            return "www.germanistik.phil.fau.de";
         } else {
             $siteUrl = get_site_url();
             $parsedUrl = parse_url($siteUrl);

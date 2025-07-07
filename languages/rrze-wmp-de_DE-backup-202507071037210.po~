@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: RRZE WMP\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-01 14:34+0000\n"
-"PO-Revision-Date: 2025-07-01 14:55+0000\n"
+"PO-Revision-Date: 2025-07-07 10:33+0000\n"
 "Last-Translator: \n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -19,56 +19,63 @@ msgstr ""
 msgid "A dashboard widget displaying information for RRZE customer domains"
 msgstr "Ein Dashboard-Widget, das Informationen für RRZE-Kundendomains anzeigt"
 
-#: includes/Overview.php:127 includes/Widget.php:68
+#: includes/Overview.php:140 includes/Widget.php:78
 msgid "Active since:"
 msgstr "Aktiv seit:"
 
-#: includes/Overview.php:115
+#: includes/Overview.php:135 includes/Widget.php:73
+msgid "Administration-Email:"
+msgstr "Administrations-Email:"
+
+#: includes/Overview.php:124
 msgid "Basic Information"
 msgstr "Basis Informationen"
 
-#: includes/Overview.php:164
+#: includes/Overview.php:183
 msgid "Booked Services"
-msgstr "Gebuchte Services"
+msgstr "Gebuchte Dienste"
 
-#: includes/Overview.php:83 includes/Widget.php:40
+#: includes/Overview.php:154
+msgid "Contact"
+msgstr "Kontakt"
+
+#: includes/Overview.php:83 includes/Widget.php:41
 msgid "Could not determine current domain."
 msgstr "Die aktuelle Domain konnte nicht ermittelt werden."
 
-#: includes/Overview.php:118 includes/Widget.php:61
+#: includes/Overview.php:129 includes/Widget.php:70
 msgid "Customer number:"
 msgstr "Kundennummer:"
 
-#: includes/Widget.php:69
+#: includes/Widget.php:79
 msgid "Dienste:"
 msgstr "Services:"
 
-#: includes/Overview.php:151
+#: includes/Overview.php:166
 msgid "Domain Aliases"
 msgstr "Domain Aliasse"
 
-#: includes/Widget.php:62
+#: includes/Widget.php:71
 msgid "Domain:"
 msgstr "Domain:"
 
+#: includes/Overview.php:132
+msgid "Host Name:"
+msgstr "Host Name:"
+
 #. Author URI of the plugin
 msgid "https://blogs.fau.de/webworking/"
-msgstr ""
+msgstr "https://blogs.fau.de/webworking/"
 
 #. URI of the plugin
 msgid "https://github.com/RRZE-Webteam/rrze-wmp"
-msgstr ""
+msgstr "https://github.com/RRZE-Webteam/rrze-wmp"
 
-#: includes/Overview.php:117 includes/Widget.php:60
+#: includes/Overview.php:128 includes/Widget.php:69
 msgid "ID:"
-msgstr ""
+msgstr "ID:"
 
-#: includes/Overview.php:90
-#, php-format
-msgid "Information for: %s"
-msgstr "Information für: %s"
-
-#: includes/Widget.php:80
+#: includes/Widget.php:90
 msgid "More Details"
 msgstr "Mehr Details"
 
@@ -82,19 +89,19 @@ msgstr "Für diese Domain sind keine WMP-Daten verfügbar."
 msgid "Plugins: %1$s: %2$s"
 msgstr "Plugins: %1$s: %2$s"
 
-#: includes/Overview.php:121
+#: includes/Overview.php:133
 msgid "Primary Domain:"
 msgstr "Primäre Domain:"
 
-#: includes/Overview.php:124
+#: includes/Overview.php:137
 msgid "Responsible Email:"
 msgstr "Verantwortliche/r Email:"
 
-#: includes/Widget.php:65
+#: includes/Widget.php:75
 msgid "Responsible-Email:"
 msgstr "Verantwortliche/r Email:"
 
-#: includes/Overview.php:123 includes/Widget.php:64
+#: includes/Overview.php:136 includes/Widget.php:74
 msgid "Responsible:"
 msgstr "Verantwortliche/r"
 
@@ -114,11 +121,11 @@ msgstr "RRZE WMP"
 msgid "RRZE WMP Domain Information"
 msgstr "RRZE WMP Domain Information"
 
-#: includes/Overview.php:119
+#: includes/Overview.php:130
 msgid "Server Name:"
 msgstr "Server Name:"
 
-#: includes/Overview.php:120 includes/Widget.php:63
+#: includes/Overview.php:131 includes/Widget.php:72
 msgid "Server:"
 msgstr "Server:"
 
@@ -142,34 +149,36 @@ msgstr ""
 "Auf dem Server läuft WordPress Version %1$s. Das Plugin benötigt mindestens "
 "die WordPress-Version %2$s."
 
-#: includes/Overview.php:139
+#: includes/Overview.php:149
+#| msgid "Website Support"
 msgid "Web Support"
 msgstr "Web Support"
 
-#: includes/Overview.php:126
+#: includes/Overview.php:139
 msgid "Webmaster Email:"
 msgstr "Webmaster Email:"
 
-#: includes/Widget.php:67
+#: includes/Widget.php:77
 msgid "Webmaster-Email:"
 msgstr "Webmaster Email:"
 
-#: includes/Overview.php:125 includes/Widget.php:66
+#: includes/Overview.php:138 includes/Widget.php:76
 msgid "Webmaster:"
 msgstr "Webmaster:"
 
 #: includes/Overview.php:134
-msgid "Website Support"
-msgstr ""
-
-#: includes/Overview.php:122
 msgid "Website Title:"
-msgstr "Webseiten Titel"
+msgstr "Website Titel:"
+
+#: includes/Overview.php:90
+#, php-format
+msgid "Website: %s"
+msgstr "Website: %s"
 
 #: includes/Overview.php:59
 msgid "WMP Overview"
 msgstr "WMP Überblick"
 
-#: includes/Overview.php:138
+#: includes/Overview.php:153
 msgid "You need help with your website? Please contact us!"
 msgstr "Sie brauchen Hilfe bei Ihrer Website? Bitte kontaktieren Sie uns!"

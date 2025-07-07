@@ -1,13 +1,14 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: RRZE WMP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-01 14:34+0000\n"
-"PO-Revision-Date: 2025-07-01 14:56+0000\n"
-"Last-Translator: \n"
-"Language-Team: Deutsch\n"
-"Language: de_DE\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"POT-Creation-Date: 2025-07-02 08:54+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,47 +18,51 @@ msgstr ""
 
 #. Description of the plugin
 msgid "A dashboard widget displaying information for RRZE customer domains"
-msgstr "Ein Dashboard-Widget, das Informationen für RRZE-Kundendomains anzeigt"
+msgstr ""
 
 #: includes/Overview.php:127 includes/Widget.php:68
 msgid "Active since:"
-msgstr "Aktiv seit:"
+msgstr ""
 
 #: includes/Overview.php:115
 msgid "Basic Information"
-msgstr "Basis Informationen"
+msgstr ""
 
-#: includes/Overview.php:164
+#: includes/Overview.php:165
 msgid "Booked Services"
-msgstr "Gebuchte Services"
+msgstr ""
+
+#: includes/Overview.php:139
+msgid "Contact"
+msgstr ""
 
 #: includes/Overview.php:83 includes/Widget.php:40
 msgid "Could not determine current domain."
-msgstr "Die aktuelle Domain konnte nicht ermittelt werden."
+msgstr ""
 
 #: includes/Overview.php:118 includes/Widget.php:61
 msgid "Customer number:"
-msgstr "Kundennummer:"
+msgstr ""
 
 #: includes/Widget.php:69
 msgid "Dienste:"
-msgstr "Services:"
+msgstr ""
 
-#: includes/Overview.php:151
+#: includes/Overview.php:152
 msgid "Domain Aliases"
-msgstr "Domain Aliasse"
+msgstr ""
 
 #: includes/Widget.php:62
 msgid "Domain:"
-msgstr "Domain:"
+msgstr ""
 
 #. Author URI of the plugin
 msgid "https://blogs.fau.de/webworking/"
-msgstr "https://blogs.fau.de/webworking/"
+msgstr ""
 
 #. URI of the plugin
 msgid "https://github.com/RRZE-Webteam/rrze-wmp"
-msgstr "https://github.com/RRZE-Webteam/rrze-wmp"
+msgstr ""
 
 #: includes/Overview.php:117 includes/Widget.php:60
 msgid "ID:"
@@ -66,61 +71,61 @@ msgstr ""
 #: includes/Overview.php:90
 #, php-format
 msgid "Information for: %s"
-msgstr "Information für: %s"
+msgstr ""
 
 #: includes/Widget.php:80
 msgid "More Details"
-msgstr "Mehr Details"
+msgstr ""
 
 #: includes/Overview.php:93
 msgid "No WMP data available for this domain."
-msgstr "Für diese Domain sind keine WMP-Daten verfügbar."
+msgstr ""
 
 #. 1: The plugin name, 2: The error string.
 #: rrze-wmp.php:199
 #, php-format
 msgid "Plugins: %1$s: %2$s"
-msgstr "Plugins: %1$s: %2$s"
+msgstr ""
 
 #: includes/Overview.php:121
 msgid "Primary Domain:"
-msgstr "Primäre Domain:"
+msgstr ""
 
 #: includes/Overview.php:124
 msgid "Responsible Email:"
-msgstr "Verantwortliche/r Email:"
+msgstr ""
 
 #: includes/Widget.php:65
 msgid "Responsible-Email:"
-msgstr "Verantwortliche/r Email:"
+msgstr ""
 
 #: includes/Overview.php:123 includes/Widget.php:64
 msgid "Responsible:"
-msgstr "Verantwortliche/r"
+msgstr ""
 
 #: includes/Overview.php:60
 msgid "RRZE"
-msgstr "RRZE"
+msgstr ""
 
 #. Author of the plugin
 msgid "RRZE Webteam"
-msgstr "RRZE Webteam"
+msgstr ""
 
 #. Name of the plugin
 msgid "RRZE WMP"
-msgstr "RRZE WMP"
+msgstr ""
 
 #: includes/Overview.php:80
 msgid "RRZE WMP Domain Information"
-msgstr "RRZE WMP Domain Information"
+msgstr ""
 
 #: includes/Overview.php:119
 msgid "Server Name:"
-msgstr "Server Name:"
+msgstr ""
 
 #: includes/Overview.php:120 includes/Widget.php:63
 msgid "Server:"
-msgstr "Server:"
+msgstr ""
 
 #. 1: Server PHP version number, 2: Required PHP version number.
 #: rrze-wmp.php:155
@@ -129,8 +134,6 @@ msgid ""
 "The server is running PHP version %1$s. The plugin requires at least PHP "
 "version %2$s."
 msgstr ""
-"Auf dem Server läuft WordPress Version %1$s. Das Plugin benötigt mindestens "
-"die WordPress-Version %2$s."
 
 #. 1: Server WordPress version number, 2: Required WordPress version number.
 #: rrze-wmp.php:147
@@ -139,37 +142,31 @@ msgid ""
 "The server is running WordPress version %1$s. The plugin requires at least "
 "WordPress version %2$s."
 msgstr ""
-"Auf dem Server läuft WordPress Version %1$s. Das Plugin benötigt mindestens "
-"die WordPress-Version %2$s."
 
-#: includes/Overview.php:139
+#: includes/Overview.php:134
 msgid "Web Support"
-msgstr "Web Support"
+msgstr ""
 
 #: includes/Overview.php:126
 msgid "Webmaster Email:"
-msgstr "Webmaster Email:"
+msgstr ""
 
 #: includes/Widget.php:67
 msgid "Webmaster-Email:"
-msgstr "Webmaster Email:"
+msgstr ""
 
 #: includes/Overview.php:125 includes/Widget.php:66
 msgid "Webmaster:"
-msgstr "Webmaster:"
-
-#: includes/Overview.php:134
-msgid "Website Support"
-msgstr "Website Support"
+msgstr ""
 
 #: includes/Overview.php:122
 msgid "Website Title:"
-msgstr "Webseiten Titel"
+msgstr ""
 
 #: includes/Overview.php:59
 msgid "WMP Overview"
-msgstr "WMP Überblick"
+msgstr ""
 
 #: includes/Overview.php:138
 msgid "You need help with your website? Please contact us!"
-msgstr "Sie brauchen Hilfe bei Ihrer Website? Bitte kontaktieren Sie uns!"
+msgstr ""
