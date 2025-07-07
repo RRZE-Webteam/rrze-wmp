@@ -35,6 +35,9 @@ wp-config.php
 # htaccess
 /.htaccess
 
+# Loco translate ignore
+*.po~
+*.pot~
 # All plugins
 #
 # Note: If you wish to whitelist plugins,

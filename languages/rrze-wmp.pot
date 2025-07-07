@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: RRZE WMP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-07 10:35+0000\n"
+"POT-Creation-Date: 2025-07-07 11:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -25,14 +25,14 @@ msgid "Active since:"
 msgstr ""
 
 #: includes/Overview.php:143 includes/Widget.php:73
-msgid "Administration-Email:"
+msgid "Administration Email:"
 msgstr ""
 
 #: includes/Overview.php:132
 msgid "Basic Information"
 msgstr ""
 
-#: includes/Overview.php:149
+#: includes/Overview.php:149 includes/Widget.php:79
 msgid "Booked Services:"
 msgstr ""
 
@@ -46,10 +46,6 @@ msgstr ""
 
 #: includes/Overview.php:137 includes/Widget.php:70
 msgid "Customer number:"
-msgstr ""
-
-#: includes/Widget.php:79
-msgid "Dienste:"
 msgstr ""
 
 #: includes/Overview.php:181

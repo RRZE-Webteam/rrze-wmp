@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: RRZE WMP\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-01 14:34+0000\n"
-"PO-Revision-Date: 2025-07-07 10:44+0000\n"
+"PO-Revision-Date: 2025-07-07 12:30+0000\n"
 "Last-Translator: \n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -25,7 +25,7 @@ msgstr "Aktiv seit:"
 
 #: includes/Overview.php:143 includes/Widget.php:73
 msgid "Administration-Email:"
-msgstr "Administrations-Email:"
+msgstr "Administration Email:"
 
 #: includes/Overview.php:132
 msgid "Basic Information"
@@ -90,7 +90,7 @@ msgstr "Für diese Domain sind keine WMP-Daten verfügbar."
 
 #: includes/Overview.php:206
 msgid "Notes on your domain "
-msgstr "Domain Notes in WMP"
+msgstr "Domain Notizen in WMP"
 
 #: includes/Overview.php:199
 msgid "Open WMP"
@@ -168,7 +168,7 @@ msgstr "WMP Logs"
 
 #: includes/Overview.php:209
 msgid "View Notes"
-msgstr "WMP Notes"
+msgstr "WMP Notizen"
 
 #: includes/Overview.php:199
 msgid "Web Master Portal"
