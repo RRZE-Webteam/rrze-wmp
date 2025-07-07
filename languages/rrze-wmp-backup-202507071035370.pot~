@@ -1,0 +1,180 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: RRZE WMP\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-04 08:32+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.0; wp-6.8.1; php-8.2.23\n"
+"X-Domain: rrze-wmp"
+
+#. Description of the plugin
+msgid "A dashboard widget displaying information for RRZE customer domains"
+msgstr ""
+
+#: includes/Overview.php:140 includes/Widget.php:78
+msgid "Active since:"
+msgstr ""
+
+#: includes/Overview.php:135 includes/Widget.php:73
+msgid "Administration-Email:"
+msgstr ""
+
+#: includes/Overview.php:124
+msgid "Basic Information"
+msgstr ""
+
+#: includes/Overview.php:183
+msgid "Booked Services"
+msgstr ""
+
+#: includes/Overview.php:154
+msgid "Contact"
+msgstr ""
+
+#: includes/Overview.php:83 includes/Widget.php:41
+msgid "Could not determine current domain."
+msgstr ""
+
+#: includes/Overview.php:129 includes/Widget.php:70
+msgid "Customer number:"
+msgstr ""
+
+#: includes/Widget.php:79
+msgid "Dienste:"
+msgstr ""
+
+#: includes/Overview.php:166
+msgid "Domain Aliases"
+msgstr ""
+
+#: includes/Widget.php:71
+msgid "Domain:"
+msgstr ""
+
+#: includes/Overview.php:132
+msgid "Host Name:"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://blogs.fau.de/webworking/"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://github.com/RRZE-Webteam/rrze-wmp"
+msgstr ""
+
+#: includes/Overview.php:128 includes/Widget.php:69
+msgid "ID:"
+msgstr ""
+
+#: includes/Widget.php:90
+msgid "More Details"
+msgstr ""
+
+#: includes/Overview.php:93
+msgid "No WMP data available for this domain."
+msgstr ""
+
+#. 1: The plugin name, 2: The error string.
+#: rrze-wmp.php:199
+#, php-format
+msgid "Plugins: %1$s: %2$s"
+msgstr ""
+
+#: includes/Overview.php:133
+msgid "Primary Domain:"
+msgstr ""
+
+#: includes/Overview.php:137
+msgid "Responsible Email:"
+msgstr ""
+
+#: includes/Widget.php:75
+msgid "Responsible-Email:"
+msgstr ""
+
+#: includes/Overview.php:136 includes/Widget.php:74
+msgid "Responsible:"
+msgstr ""
+
+#: includes/Overview.php:60
+msgid "RRZE"
+msgstr ""
+
+#. Author of the plugin
+msgid "RRZE Webteam"
+msgstr ""
+
+#. Name of the plugin
+msgid "RRZE WMP"
+msgstr ""
+
+#: includes/Overview.php:80
+msgid "RRZE WMP Domain Information"
+msgstr ""
+
+#: includes/Overview.php:130
+msgid "Server Name:"
+msgstr ""
+
+#: includes/Overview.php:131 includes/Widget.php:72
+msgid "Server:"
+msgstr ""
+
+#. 1: Server PHP version number, 2: Required PHP version number.
+#: rrze-wmp.php:155
+#, php-format
+msgid ""
+"The server is running PHP version %1$s. The plugin requires at least PHP "
+"version %2$s."
+msgstr ""
+
+#. 1: Server WordPress version number, 2: Required WordPress version number.
+#: rrze-wmp.php:147
+#, php-format
+msgid ""
+"The server is running WordPress version %1$s. The plugin requires at least "
+"WordPress version %2$s."
+msgstr ""
+
+#: includes/Overview.php:149
+msgid "Web Support"
+msgstr ""
+
+#: includes/Overview.php:139
+msgid "Webmaster Email:"
+msgstr ""
+
+#: includes/Widget.php:77
+msgid "Webmaster-Email:"
+msgstr ""
+
+#: includes/Overview.php:138 includes/Widget.php:76
+msgid "Webmaster:"
+msgstr ""
+
+#: includes/Overview.php:134
+msgid "Website Title:"
+msgstr ""
+
+#: includes/Overview.php:90
+#, php-format
+msgid "Website: %s"
+msgstr ""
+
+#: includes/Overview.php:59
+msgid "WMP Overview"
+msgstr ""
+
+#: includes/Overview.php:153
+msgid "You need help with your website? Please contact us!"
+msgstr ""

@@ -1,0 +1,87 @@
+/*
+Dashboard Widget
+ */
+.rrze-wmp-widget-table td {
+    padding: 4px 0;
+}
+
+.rrze-wmp-widget-table td:first-child {
+    font-weight: bold;
+    padding: 0 10px 0 0;
+}
+
+
+/*
+Overview Page
+ */
+
+.rrze-wmp-layout-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 10px;
+
+}
+
+.rrze-wmp-section {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.container-header {
+    background: #f9f9f9;
+    padding: 5px 5px 5px 20px;
+}
+
+.portal-container-header a {
+    text-decoration: none;
+}
+
+.container-body {
+    margin-bottom: 20px;
+    padding: 10px 20px 20px 20px;
+}
+
+.rrze-wmp-overview-table td {
+    padding: 4px 0;
+}
+
+.rrze-wmp-overview-table td:first-child {
+    font-weight: bold;
+    padding: 0 10px 0 0;
+}
+
+.rrze-wmp-overview-list {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.rrze-wmp-overview-list li {
+    padding: 0 0 3px 0;
+}
+
+.rrze-wmp-contact-box {
+    background: #f9f9f9;
+    padding: 5px 15px 20px 15px;
+    margin-top: 10px;
+}
+
+.rrze-wmp-info-box {
+    background: #f9f9f9;
+    padding: 5px 15px 10px 15px;
+    margin-top: 8px;
+
+}
+
+h3 .dashicons {
+    text-decoration: none;
+    vertical-align: middle;
+
+}
+
+.rrze-wmp-info-box a {
+    font-weight: bold;
+}
