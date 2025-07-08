@@ -1,17 +1,17 @@
-## RRZE WMP Plugin
+# RRZE WMP Plugin
 WordPress Plugin zur Integration des Webmaster Portals (WMP).
 
-# Beschreibung
+## Beschreibung
 Das Plugin zeigt automatisch Domain-Informationen aus WMP im WordPress Dashboard und auf einer Übersichtsseite an. 
 Es hilft Administratoren und Webmastern, relevante Domain-Daten schnell einzusehen.
 
-# Feature
+## Feature
 - Dashboard Widget: Kompakte WMP-Informationen im WordPress Dashboard
 - RRZE Übersichtsseite: Detaillierte Domain-Informationen auf separater Admin-Seite
 - Automatischer Datenabruf: Verwendet Domain-Name als Abrufparameter
 - Verfügbar für alle Dashboard-Rollen
 
-# Dashboard Widget (kompakt)
+### Dashboard Widget (kompakt)
 Kern-Informationen:
 - ID und Kundennummer
 - Domain und Server
@@ -21,7 +21,7 @@ Kern-Informationen:
 - Aktiv seit Datum
 - Gebuchte Services
 
-# RRZE Übersichtsseite (detailliert)
+### RRZE Übersichtsseite (detailliert)
 - Alle Widget-Informationen + weitere Informationen
 - Domain-Aliasse
 - Web Support Kontakt
