@@ -2,7 +2,7 @@
 Dashboard Widget
  */
 .rrze-wmp-widget-table td {
-    padding: 4px 0;
+    padding: 5px 0;
 }
 
 .rrze-wmp-widget-table td:first-child {
@@ -27,7 +27,6 @@ Overview Page
     border: 1px solid #c3c4c7;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
     margin-bottom: 20px;
-    font-size: 14px;
 }
 
 .container-header {
@@ -45,7 +44,7 @@ Overview Page
 }
 
 .rrze-wmp-overview-table td {
-    padding: 4px 0;
+    padding: 5px 0;
 }
 
 .rrze-wmp-overview-table td:first-child {
@@ -73,12 +72,6 @@ Overview Page
     background: #f9f9f9;
     padding: 5px 15px 10px 15px;
     margin-top: 8px;
-
-}
-
-h3 .dashicons {
-    text-decoration: none;
-    vertical-align: middle;
 
 }
 

@@ -38,6 +38,9 @@ wp-config.php
 # Loco translate ignore
 *.po~
 *.pot~
+
+### PhpStorm ###
+.idea/
 # All plugins
 #
 # Note: If you wish to whitelist plugins,

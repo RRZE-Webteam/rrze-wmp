@@ -28,19 +28,6 @@ class ApiClient
      */
     public function getDomainData(string $domain): array
     {
-//        if (Helper::isDebug()) {
-////            // Debug-Mode: Load local JSON
-////            $asset_path = plugin_dir_path(__DIR__) . 'assets/test-data.json';
-////            if (file_exists($asset_path)) {
-////                $dummy = file_get_contents($asset_path);
-////                $data = json_decode($dummy, true);
-////                Helper::debug('Daten aus test-data.json geladen');
-////                return $data ?? [];
-////            } else {
-////                Helper::debug('Fehler: test-data.json nicht gefunden', 'error');
-////                return [];
-////            }
-
         // get API data
         $url = $this->baseUrl . urlencode($domain);
 
