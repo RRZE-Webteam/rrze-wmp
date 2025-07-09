@@ -8,6 +8,7 @@ Dashboard Widget
 .rrze-wmp-widget-table td:first-child {
     font-weight: bold;
     padding: 0 10px 0 0;
+    width:40%;
 }
 
 
@@ -15,11 +16,10 @@ Dashboard Widget
 Overview Page
  */
 
-.rrze-wmp-layout-container {
+.rrze-wmp-layout-container-two-columns {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.55fr 0.45fr;
     gap: 20px 10px;
-
 }
 
 .rrze-wmp-section {
@@ -60,12 +60,6 @@ Overview Page
 
 .rrze-wmp-overview-list li {
     padding: 0 0 3px 0;
-}
-
-.rrze-wmp-contact-box {
-    background: #f9f9f9;
-    padding: 5px 15px 20px 15px;
-    margin-top: 10px;
 }
 
 .rrze-wmp-info-box {
