@@ -71,10 +71,8 @@ class Widget
         echo '<tr><td>' . __('Domain:', 'rrze-wmp') . '</td><td>' . esc_html($data ['servername'] ?? 'N/A') . '</td></tr>';
         echo '<tr><td>' . __('Server:', 'rrze-wmp') . '</td><td>' . esc_html($data['server'] ?? 'N/A') . '</td></tr>';
         echo '<tr><td>' . __('Administration Email:', 'rrze-wmp') . '</td><td>' . esc_html($data ['instanz']['adminemail'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td>' . __('Responsible:', 'rrze-wmp') . '</td><td>' . esc_html($data['persons']['responsible']['name'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td>' . __('Responsible-Email:', 'rrze-wmp') . '</td><td>' . esc_html($data['persons']['responsible']['email'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td>' . __('Webmaster:', 'rrze-wmp') . '</td><td>' . esc_html($data['persons']['webmaster']['name'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td>' . __('Webmaster-Email:', 'rrze-wmp') . '</td><td>' . esc_html($data['persons']['webmaster']['email'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td>' . __('Responsible:', 'rrze-wmp') . '</td><td>' . esc_html(($data['persons']['responsible']['name'] ?? 'N/A') . ' (' . ($data['persons']['responsible']['email'] ?? 'N/A') . ')') . '</td></tr>';
+        echo '<tr><td>' . __('Webmaster:', 'rrze-wmp') . '</td><td>' . esc_html(($data['persons']['webmaster']['name'] ?? 'N/A') . ' (' . ($data['persons']['webmaster']['email'] ?? 'N/A') . ')') . '</td></tr>';
         echo '<tr><td>' . __('Active since:', 'rrze-wmp') . '</td><td>' . esc_html($formatted_date) . '</td></tr>';
         echo '<tr><td>' . __('Booked Services:', 'rrze-wmp') . '</td><td>';
         if (!empty($data['instanz']['dienste']) && is_array($data['instanz']['dienste'])) {
