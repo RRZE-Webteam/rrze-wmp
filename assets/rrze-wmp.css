@@ -16,12 +16,6 @@ Dashboard Widget
 Overview Page
  */
 
-.rrze-wmp-layout-container-two-columns {
-    display: grid;
-    grid-template-columns: 0.55fr 0.45fr;
-    gap: 20px 10px;
-}
-
 .rrze-wmp-section {
     background: #fff;
     border: 1px solid #c3c4c7;

@@ -95,18 +95,11 @@ class Widget
         echo '<tr><td>' . __('ID:', 'rrze-wmp') . '</td><td>' . esc_html($data['id'] ?? 'N/A') . '</td></tr>';
         echo '<tr><td>' . __('Customer number:', 'rrze-wmp') . '</td><td>' . $kunu_link . '</td></tr>';
         echo '<tr><td>' . __('Primary Domain:', 'rrze-wmp') . '</td><td>' . esc_html($data ['instanz']['primary_domain'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td>' . __('Website Title:', 'rrze-wmp') . '</td><td>' . esc_html($data ['instanz']['title'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td>' . __('Website Title:', 'rrze-wmp') . '</td><td>' . esc_html(get_bloginfo('name')) . '</td></tr>';
         echo '<tr><td>' . __('Administration Email:', 'rrze-wmp') . '</td><td>' . esc_html($data ['instanz']['adminemail'] ?? 'N/A') . '</td></tr>';
         echo '<tr><td>' . __('Responsible:', 'rrze-wmp') . '</td><td>' . $responsible_display . '</td></tr>';
         echo '<tr><td>' . __('Webmaster:', 'rrze-wmp') . '</td><td>' . $webmaster_display . '</td></tr>';
         echo '<tr><td>' . __('Active since:', 'rrze-wmp') . '</td><td>' . esc_html($formatted_date) . '</td></tr>';
-        echo '<tr><td>' . __('Booked Services:', 'rrze-wmp') . '</td><td>';
-        if (!empty($data['instanz']['dienste']) && is_array($data['instanz']['dienste'])) {
-            echo esc_html(implode(', ', $data['instanz']['dienste']));
-        } else {
-            echo 'N/A';
-        }
-        echo '</td></tr>';
         echo '</table>';
 
         // Link to admin overview page
