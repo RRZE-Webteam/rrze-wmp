@@ -106,7 +106,7 @@ class Overview
      */
     protected function renderDetailedView(array $data)
     {
-//formatting data from activesince
+        //formatting data from activesince
         $aktivseit = $data['aktivseit'] ?? 'N/A';
         if ($aktivseit !== 'N/A') {
             $date = new \DateTime($aktivseit);
@@ -115,16 +115,39 @@ class Overview
             $formatted_date = 'N/A';
         }
 
-        //link to wmp Faktura
+        //link to wmp customer number
         $kunu = $data['instanz']['kunu'] ?? 'N/A';
         if ($kunu !== 'N/A') {
-            $kunu_link = '<a href="https://www.wmp.rrze.fau.de/faktura"' . urlencode($kunu) . '" target="_blank">' . esc_html($kunu) . '</a>';
+            $kunu_link = '<a href="https://www.wmp.rrze.fau.de/search/kunu/' . urlencode($kunu) . '/show" target="_blank">' . esc_html($kunu) . '</a>';
         } else {
             $kunu_link = 'N/A';
         }
 
-        // Layout Container
-        echo '<div class="rrze-wmp-layout-container">';
+        // Responsible Email
+        $responsible_name = $data['persons']['responsible']['name'] ?? 'N/A';
+        $responsible_email = $data['persons']['responsible']['email'] ?? 'N/A';
+        if ($responsible_email !== 'N/A') {
+            $responsible_display = esc_html($responsible_name) . ' (<a href="mailto:' . esc_attr($responsible_email) . '">' . esc_html($responsible_email) . '</a>)';
+        } else {
+            $responsible_display = esc_html($responsible_name . ' (' . $responsible_email . ')');
+        }
+
+        // Webmaster Email
+        $webmaster_name = $data['persons']['webmaster']['name'] ?? 'N/A';
+        $webmaster_email = $data['persons']['webmaster']['email'] ?? 'N/A';
+        if ($webmaster_email !== 'N/A') {
+            $webmaster_display = esc_html($webmaster_name) . ' (<a href="mailto:' . esc_attr($webmaster_email) . '">' . esc_html($webmaster_email) . '</a>)';
+        } else {
+            $webmaster_display = esc_html($webmaster_name . ' (' . $webmaster_email . ')');
+        }
+
+        // Admin Email
+        $admin_email = $data['instanz']['adminemail'] ?? 'N/A';
+        if ($admin_email !== 'N/A') {
+            $admin_email_link = ' <a href="mailto:' . esc_attr($admin_email) . '">' . esc_html($admin_email) . '</a>';
+        } else {
+            $admin_email_link = 'N/A';
+        }
 
         // Basic Information
         echo '<div class="rrze-wmp-section rrze-wmp-basic-content">';
@@ -134,17 +157,15 @@ class Overview
         echo '<div class="container-body">';
         echo '<table class="rrze-wmp-overview-table">';
         echo '<tr><td>' . __('ID:', 'rrze-wmp') . '</td><td>' . esc_html($data['id'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td>' . __('Customer number:', 'rrze-wmp') . '</td><td>' . $kunu_link .  '</td></tr>';
+        echo '<tr><td>' . __('Customer number:', 'rrze-wmp') . '</td><td>' . $kunu_link . '</td></tr>';
         echo '<tr><td>' . __('Server Name:', 'rrze-wmp') . '</td><td>' . esc_html($data ['servername'] ?? 'N/A') . '</td></tr>';
         echo '<tr><td>' . __('Server:', 'rrze-wmp') . '</td><td>' . esc_html($data['server'] ?? 'N/A') . '</td></tr>';
         echo '<tr><td>' . __('Host Name:', 'rrze-wmp') . '</td><td>' . esc_html($data['instanz']['hostname'] ?? 'N/A') . '</td></tr>';
         echo '<tr><td>' . __('Primary Domain:', 'rrze-wmp') . '</td><td>' . esc_html($data ['instanz']['primary_domain'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td>' . __('Website Title:', 'rrze-wmp') . '</td><td>' . esc_html($data ['instanz']['title'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td>' . __('Administration Email:', 'rrze-wmp') . '</td><td>' . esc_html($data ['instanz']['adminemail'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td>' . __('Responsible:', 'rrze-wmp') . '</td><td>' . esc_html(($data['persons']['responsible']['name'] ?? 'N/A') . ' (' . ($data['persons']['responsible']['uid'] ?? 'N/A') . ')') . '</td></tr>';
-        echo '<tr><td>' . __('Responsible Email:', 'rrze-wmp') . '</td><td>' . esc_html($data['persons']['responsible']['email'] ?? 'N/A') . '</td></tr>';
-        echo '<tr><td>' . __('Webmaster:', 'rrze-wmp') . '</td><td>' . esc_html(($data['persons']['webmaster']['name'] ?? 'N/A') . ' (' . ($data['persons']['webmaster']['uid'] ?? 'N/A') . ')') . '</td></tr>';
-        echo '<tr><td>' . __('Webmaster Email:', 'rrze-wmp') . '</td><td>' . esc_html($data['persons']['webmaster']['email'] ?? 'N/A') . '</td></tr>';
+        echo '<tr><td>' . __('Website Title:', 'rrze-wmp') . '</td><td>' . esc_html(get_bloginfo('name')) . '</td></tr>';
+        echo '<tr><td>' . __('Administration Email:', 'rrze-wmp') . '</td><td>' . $admin_email_link . '</td></tr>';
+        echo '<tr><td>' . __('Responsible:', 'rrze-wmp') . '</td><td>' . $responsible_display . '</td></tr>';
+        echo '<tr><td>' . __('Webmaster:', 'rrze-wmp') . '</td><td>' . $webmaster_display . '</td></tr>';
         echo '<tr><td>' . __('Active since:', 'rrze-wmp') . '</td><td>' . esc_html($formatted_date) . '</td></tr>';
         echo '<tr><td>' . __('Booked Services:', 'rrze-wmp') . '</td><td>';
         if (!empty($data['instanz']['dienste']) && is_array($data['instanz']['dienste'])) {
@@ -157,23 +178,35 @@ class Overview
         echo '</div>';
         echo '</div>';
 
+        // Website Administrators
+        $wp_admins = get_users(array(
+            'role' => 'administrator',
+            'fields' => array('display_name', 'user_email')
+        ));
 
-        // Contact Box
-        echo '<div class="rrze-wmp-section rrze-wmp-contact">';
+        echo '<div class="rrze-wmp-section rrze-wmp-wp-admins">';
         echo '<div class="container-header">';
-        echo '<h3>' . __('Web Support', 'rrze-wmp') . '</h3>';
+        echo '<h3>' . __('Website Administrators ', 'rrze-wmp') . '</h3>';
+        echo '<p>' . __('The following website administrators receive messages via the administration e-mail', 'rrze-wmp') . ' <strong>' . $admin_email_link . '.</strong></p>';
         echo '</div>';
         echo '<div class="container-body">';
-        echo '<div class="rrze-wmp-contact-box">';
-        echo '<p>' . __('You need help with your website? Please contact us!', 'rrze-wmp') . '</p>';
-        echo '<a href="mailto:webmaster@fau.de" class="button button-primary">' . __('Contact', 'rrze-wmp') . '</a>';
-        echo '</div>';
+        echo '<table class="rrze-wmp-overview-table">';
+        if (!empty($wp_admins)) {
+            foreach ($wp_admins as $admin) {
+                $admin_name = $admin->display_name;
+                $admin_email = $admin->user_email;
+                $admin_display = esc_html($admin_name) . ' (<a href="mailto:' . esc_attr($admin_email) . '">' . esc_html($admin_email) . '</a>)';
+                echo '<tr><td>' . __('Admin:', 'rrze-wmp') . '</td><td>' . $admin_display . '</td></tr>';
+            }
+        } else {
+            echo '<tr><td colspan="2">' . __('No administrators found', 'rrze-wmp') . '</td></tr>';
+        }
+
+        echo '</table>';
         echo '</div>';
         echo '</div>';
 
-        echo '</div>';
 
-        echo '<div class="rrze-wmp-layout-container">';
         // Domain-Alias
         if (!empty($data['serveralias']) && is_array($data['serveralias'])) {
             echo '<div class="rrze-wmp-section rrze-wmp-alias">';
@@ -190,16 +223,14 @@ class Overview
             echo '</div>';
         }
 
-
         // Web Master Portal
-
         if (!empty($data['instanz']['dienste']) && is_array($data['instanz']['dienste'])) {
             echo '<div class="rrze-wmp-section rrze-wmp-portal">';
             echo '<div class="container-header">';
             echo '<h3 class="portal-container-header">' . __('Web Master Portal', 'rrze-wmp') . '<a href="https://www.wmp.rrze.fau.de" target="_blank" title="' . __('Open WMP', 'rrze-wmp') . '">
-        <span class="dashicons dashicons-external"></span>
-    </a>' . ' </h3>';
-            
+            <span class="dashicons dashicons-external"></span>
+              </a>' . ' </h3>';
+
             echo '</div>';
             echo '<div class="container-body">';
             echo '<div class="rrze-wmp-info-box">';
@@ -219,9 +250,31 @@ class Overview
             echo '</div>';
             echo '</div>';
 
-        }
-        echo '</div>';
-    }
 
+        }
+
+
+        // Contact Box
+        // Get domain data for email
+        $domain_name = $data['instanz']['primary_domain'] ?? 'N/A';
+        $domain_id = $data['id'] ?? 'N/A';
+
+        // Build mailto link with pre-filled subject and body
+        $subject = 'Anfrage zur Website ' . $domain_name;
+        $body = 'Domain: ' . $domain_name . '%0D%0A' . 'ID: ' . $domain_id . '%0D%0A' . 'Unser Anliegen:';
+        $mailto_link = 'mailto:webmaster@fau.de?subject=' . rawurlencode($subject) . '&body=' . $body;
+
+
+        echo '<div class="rrze-wmp-section rrze-wmp-contact">';
+        echo '<div class="container-header">';
+        echo '<h3>' . __('Web Support', 'rrze-wmp') . '</h3>';
+        echo '</div>';
+        echo '<div class="container-body">';
+        echo '<p>' . __('You need help with your website? Please contact us!', 'rrze-wmp') . '</p>';
+        echo '<a href="' . $mailto_link . '" class="button button-primary">' . __('Contact', 'rrze-wmp') . '</a>';
+        echo '</div>';
+        echo '</div>';
+
+    }
 
 }
