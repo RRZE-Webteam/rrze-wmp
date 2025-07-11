@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: RRZE WMP\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-01 14:34+0000\n"
-"PO-Revision-Date: 2025-07-10 07:04+0000\n"
+"PO-Revision-Date: 2025-07-11 08:47+0000\n"
 "Last-Translator: \n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -19,7 +19,7 @@ msgstr ""
 msgid "A dashboard widget displaying information for RRZE customer domains"
 msgstr "Ein Dashboard-Widget, das Informationen für RRZE-Kundendomains anzeigt"
 
-#: includes/Overview.php:161 includes/Widget.php:102
+#: includes/Overview.php:169 includes/Widget.php:102
 msgid "Active since:"
 msgstr "Aktiv seit:"
 
@@ -27,22 +27,21 @@ msgstr "Aktiv seit:"
 msgid "Admin:"
 msgstr "Admin:"
 
-#: includes/Overview.php:158 includes/Widget.php:99
-#, fuzzy
+#: includes/Overview.php:166 includes/Widget.php:99
 #| msgid "Administration-Email:"
 msgid "Administration Email:"
 msgstr "Administration E-Mail:"
 
-#: includes/Overview.php:147
+#: includes/Overview.php:155
 msgid "Basic Information"
 msgstr "Basis Informationen"
 
-#: includes/Overview.php:162
+#: includes/Overview.php:170
 #| msgid "Booked Services"
 msgid "Booked Services:"
 msgstr "Gebuchte Dienste:"
 
-#: includes/Overview.php:276
+#: includes/Overview.php:274
 msgid "Contact"
 msgstr "Kontakt"
 
@@ -50,15 +49,15 @@ msgstr "Kontakt"
 msgid "Could not determine current domain."
 msgstr "Die aktuelle Domain konnte nicht ermittelt werden."
 
-#: includes/Overview.php:152 includes/Widget.php:96
+#: includes/Overview.php:160 includes/Widget.php:96
 msgid "Customer number:"
 msgstr "Kundennummer:"
 
-#: includes/Overview.php:216
+#: includes/Overview.php:214
 msgid "Domain Aliases"
 msgstr "Domain Aliasse"
 
-#: includes/Overview.php:155
+#: includes/Overview.php:163
 msgid "Host Name:"
 msgstr "Host Name:"
 
@@ -70,19 +69,11 @@ msgstr "https://blogs.fau.de/webworking/"
 msgid "https://github.com/RRZE-Webteam/rrze-wmp"
 msgstr "https://github.com/RRZE-Webteam/rrze-wmp"
 
-#: includes/Overview.php:151 includes/Widget.php:95
+#: includes/Overview.php:159 includes/Widget.php:95
 msgid "ID:"
 msgstr "ID:"
 
-#: includes/Overview.php:193
-msgid ""
-"List of all website administrators who receive messages via the general "
-"administration email"
-msgstr ""
-"Liste aller Website-Administratoren, die Nachrichten erhalten über die "
-"Administrations E-Mail"
-
-#: includes/Overview.php:246
+#: includes/Overview.php:244
 msgid "Logs on your domain "
 msgstr "Domain Logs in WMP"
 
@@ -98,11 +89,11 @@ msgstr "Keine Administratoren vorhanden"
 msgid "No WMP data available for this domain."
 msgstr "Für diese Domain sind keine WMP-Daten verfügbar."
 
-#: includes/Overview.php:239
+#: includes/Overview.php:237
 msgid "Notes on your domain "
 msgstr "Domain Notizen in WMP"
 
-#: includes/Overview.php:232
+#: includes/Overview.php:230
 msgid "Open WMP"
 msgstr "WMP öffnen"
 
@@ -112,11 +103,11 @@ msgstr "WMP öffnen"
 msgid "Plugins: %1$s: %2$s"
 msgstr "Plugins: %1$s: %2$s"
 
-#: includes/Overview.php:156 includes/Widget.php:97
+#: includes/Overview.php:164 includes/Widget.php:97
 msgid "Primary Domain:"
 msgstr "Primäre Domain:"
 
-#: includes/Overview.php:159 includes/Widget.php:100
+#: includes/Overview.php:167 includes/Widget.php:100
 msgid "Responsible:"
 msgstr "Inhaltliche Verantwortung:"
 
@@ -136,13 +127,21 @@ msgstr "RRZE WMP"
 msgid "RRZE WMP Domain Information"
 msgstr "RRZE WMP Domain Information"
 
-#: includes/Overview.php:153
+#: includes/Overview.php:161
 msgid "Server Name:"
 msgstr "Server Name:"
 
-#: includes/Overview.php:154
+#: includes/Overview.php:162
 msgid "Server:"
 msgstr "Server:"
+
+#: includes/Overview.php:190
+msgid ""
+"The following website administrators receive messages via the administration "
+"e-mail"
+msgstr ""
+"Folgende Website Administratoren erhalten Nachrichten über die "
+"Administration E-Mail "
 
 #. 1: Server PHP version number, 2: Required PHP version number.
 #: rrze-wmp.php:155
@@ -164,24 +163,24 @@ msgstr ""
 "Auf dem Server läuft WordPress Version %1$s. Das Plugin benötigt mindestens "
 "die WordPress-Version %2$s."
 
-#: includes/Overview.php:249
+#: includes/Overview.php:247
 msgid "View Logs"
 msgstr "WMP Logs"
 
-#: includes/Overview.php:242
+#: includes/Overview.php:240
 msgid "View Notes"
 msgstr "WMP Notizen"
 
-#: includes/Overview.php:232
+#: includes/Overview.php:230
 msgid "Web Master Portal"
 msgstr "Web Master Portal"
 
-#: includes/Overview.php:272
+#: includes/Overview.php:270
 #| msgid "Website Support"
 msgid "Web Support"
 msgstr "Web Support"
 
-#: includes/Overview.php:160 includes/Widget.php:101
+#: includes/Overview.php:168 includes/Widget.php:101
 msgid "Webmaster:"
 msgstr "Webmaster:"
 
@@ -190,7 +189,7 @@ msgstr "Webmaster:"
 msgid "Website Administrators "
 msgstr "Website Administratoren"
 
-#: includes/Overview.php:157 includes/Widget.php:98
+#: includes/Overview.php:165 includes/Widget.php:98
 msgid "Website Title:"
 msgstr "Website Titel:"
 
@@ -203,6 +202,6 @@ msgstr "Website: %s"
 msgid "WMP Overview"
 msgstr "WMP Überblick"
 
-#: includes/Overview.php:275
+#: includes/Overview.php:273
 msgid "You need help with your website? Please contact us!"
 msgstr "Sie brauchen Hilfe bei Ihrer Website? Bitte kontaktieren Sie uns!"

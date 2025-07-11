@@ -187,7 +187,7 @@ class Overview
         echo '<div class="rrze-wmp-section rrze-wmp-wp-admins">';
         echo '<div class="container-header">';
         echo '<h3>' . __('Website Administrators ', 'rrze-wmp') . '</h3>';
-        echo '<p>' . __('List of all website administrators who receive messages via the general administration email', 'rrze-wmp') . ' <strong>' . $admin_email_link . '.</strong></p>';
+        echo '<p>' . __('The following website administrators receive messages via the administration e-mail', 'rrze-wmp') . ' <strong>' . $admin_email_link . '.</strong></p>';
         echo '</div>';
         echo '<div class="container-body">';
         echo '<table class="rrze-wmp-overview-table">';

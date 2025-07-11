@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: RRZE WMP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-10 06:59+0000\n"
+"POT-Creation-Date: 2025-07-11 08:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "A dashboard widget displaying information for RRZE customer domains"
 msgstr ""
 
-#: includes/Overview.php:161 includes/Widget.php:102
+#: includes/Overview.php:169 includes/Widget.php:102
 msgid "Active since:"
 msgstr ""
 
@@ -28,19 +28,19 @@ msgstr ""
 msgid "Admin:"
 msgstr ""
 
-#: includes/Overview.php:158 includes/Widget.php:99
+#: includes/Overview.php:166 includes/Widget.php:99
 msgid "Administration Email:"
 msgstr ""
 
-#: includes/Overview.php:147
+#: includes/Overview.php:155
 msgid "Basic Information"
 msgstr ""
 
-#: includes/Overview.php:162
+#: includes/Overview.php:170
 msgid "Booked Services:"
 msgstr ""
 
-#: includes/Overview.php:276
+#: includes/Overview.php:274
 msgid "Contact"
 msgstr ""
 
@@ -48,15 +48,15 @@ msgstr ""
 msgid "Could not determine current domain."
 msgstr ""
 
-#: includes/Overview.php:152 includes/Widget.php:96
+#: includes/Overview.php:160 includes/Widget.php:96
 msgid "Customer number:"
 msgstr ""
 
-#: includes/Overview.php:216
+#: includes/Overview.php:214
 msgid "Domain Aliases"
 msgstr ""
 
-#: includes/Overview.php:155
+#: includes/Overview.php:163
 msgid "Host Name:"
 msgstr ""
 
@@ -68,17 +68,11 @@ msgstr ""
 msgid "https://github.com/RRZE-Webteam/rrze-wmp"
 msgstr ""
 
-#: includes/Overview.php:151 includes/Widget.php:95
+#: includes/Overview.php:159 includes/Widget.php:95
 msgid "ID:"
 msgstr ""
 
-#: includes/Overview.php:193
-msgid ""
-"List of all website administrators who receive messages via the general "
-"administration email"
-msgstr ""
-
-#: includes/Overview.php:246
+#: includes/Overview.php:244
 msgid "Logs on your domain "
 msgstr ""
 
@@ -94,11 +88,11 @@ msgstr ""
 msgid "No WMP data available for this domain."
 msgstr ""
 
-#: includes/Overview.php:239
+#: includes/Overview.php:237
 msgid "Notes on your domain "
 msgstr ""
 
-#: includes/Overview.php:232
+#: includes/Overview.php:230
 msgid "Open WMP"
 msgstr ""
 
@@ -108,11 +102,11 @@ msgstr ""
 msgid "Plugins: %1$s: %2$s"
 msgstr ""
 
-#: includes/Overview.php:156 includes/Widget.php:97
+#: includes/Overview.php:164 includes/Widget.php:97
 msgid "Primary Domain:"
 msgstr ""
 
-#: includes/Overview.php:159 includes/Widget.php:100
+#: includes/Overview.php:167 includes/Widget.php:100
 msgid "Responsible:"
 msgstr ""
 
@@ -132,12 +126,18 @@ msgstr ""
 msgid "RRZE WMP Domain Information"
 msgstr ""
 
-#: includes/Overview.php:153
+#: includes/Overview.php:161
 msgid "Server Name:"
 msgstr ""
 
-#: includes/Overview.php:154
+#: includes/Overview.php:162
 msgid "Server:"
+msgstr ""
+
+#: includes/Overview.php:190
+msgid ""
+"The following website administrators receive messages via the administration "
+"e-mail"
 msgstr ""
 
 #. 1: Server PHP version number, 2: Required PHP version number.
@@ -156,23 +156,23 @@ msgid ""
 "WordPress version %2$s."
 msgstr ""
 
-#: includes/Overview.php:249
+#: includes/Overview.php:247
 msgid "View Logs"
 msgstr ""
 
-#: includes/Overview.php:242
+#: includes/Overview.php:240
 msgid "View Notes"
 msgstr ""
 
-#: includes/Overview.php:232
+#: includes/Overview.php:230
 msgid "Web Master Portal"
 msgstr ""
 
-#: includes/Overview.php:272
+#: includes/Overview.php:270
 msgid "Web Support"
 msgstr ""
 
-#: includes/Overview.php:160 includes/Widget.php:101
+#: includes/Overview.php:168 includes/Widget.php:101
 msgid "Webmaster:"
 msgstr ""
 
@@ -180,7 +180,7 @@ msgstr ""
 msgid "Website Administrators "
 msgstr ""
 
-#: includes/Overview.php:157 includes/Widget.php:98
+#: includes/Overview.php:165 includes/Widget.php:98
 msgid "Website Title:"
 msgstr ""
 
@@ -193,6 +193,6 @@ msgstr ""
 msgid "WMP Overview"
 msgstr ""
 
-#: includes/Overview.php:275
+#: includes/Overview.php:273
 msgid "You need help with your website? Please contact us!"
 msgstr ""
