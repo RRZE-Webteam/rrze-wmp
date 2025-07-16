@@ -22,7 +22,6 @@ class Main
      */
     protected $widget;
 
-
     /**
      * Initialize the plugin.
      *
@@ -33,15 +32,15 @@ class Main
      */
     public function loaded()
     {
-        $this->apiClient = new ApiClient();
-        $this->widget = new Widget($this->apiClient);
-        $this->overview = new Overview($this->apiClient);
+        $apiClient = new ApiClient();
+        $this->widget = new Widget($apiClient);
+        new Overview($apiClient);
 
         //Main organises and registers
         add_action('wp_dashboard_setup', [$this, 'addDashboardWidget']);
 
         // Register styles
-        add_action('admin_enqueue_scripts', [$this, 'rrze_wmp_enqueue_styles']);
+        add_action('admin_enqueue_scripts', [$this, 'rrzeWmpEnqueueStyles']);
 
     }
 
@@ -63,41 +62,14 @@ class Main
      * Enqueue plugin styles
      * Called by WordPress hook 'admin_enqueue_scripts'
      */
-    public function rrze_wmp_enqueue_styles(): void
+    public function rrzeWmpEnqueueStyles(): void
     {
         wp_enqueue_style(
             'rrze-wmp-styles',
-            plugin_dir_url(__FILE__) . '../assets/rrze-wmp.css',
-            array(),
-            '1.0.0'
+            plugins_url('assets/rrze-wmp.css', plugin()->getBasename()),
+            [],
+            plugin()->getVersion()
         );
-    }
-
-    /**
-     * *
-     * Retrieves domain data from WMP API with 24-hour caching.
-     * Checks for cached data first, returns it if available and not expired.
-     * If no cache exists, fetches fresh data from WMP API and stores it
-     * in transients for 24 hours to improve performance.
-     *
-     * @param string $domain The domain name to fetch data for
-     * @return array|false Domain data array on success, false on failure
-     * @since 1.0.0
-     */
-    private function get_domain_data($domain)
-    {
-        $transient_key = 'rrze_wmp_domain_' . md5($domain);
-        $cached_data = get_transient($transient_key);
-
-        if ($cached_data !== false) {
-            return $cached_data;
-        }
-
-        $api_data = $this->call_wmp_api($domain);
-
-        set_transient($transient_key, $api_data, DAY_IN_SECONDS);
-
-        return $api_data;
     }
 
 }
