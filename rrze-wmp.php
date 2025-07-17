@@ -3,7 +3,7 @@
 /*
 Plugin Name:        RRZE WMP
 Plugin URI:         https://github.com/RRZE-Webteam/rrze-wmp
-Version:            1.0.2
+Version:            1.0.3
 Description:        A dashboard widget displaying information for RRZE customer domains
 Author:             RRZE Webteam
 Author URI:         https://blogs.fau.de/webworking/
