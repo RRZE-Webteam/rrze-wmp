@@ -6,35 +6,47 @@ defined('ABSPATH') || exit;
 
 class Helper
 {
+    /**
+     * Checks if the current environment is 'local' or 'development'.
+     *
+     * Uses WordPress' wp_get_environment_type() to determine the context.
+     * See: https://developer.wordpress.org/reference/functions/wp_get_environment_type/
+     *
+     * @return bool True if local or development environment, false otherwise.
+     */
+    public static function isDevelopmentEnvironment(): bool
+    {
+        return in_array(
+            wp_get_environment_type(),
+            ['local', 'development'],
+            true
+        );
+    }
+
 
     /**
-     * Determine which url should be used and return the string
+     * Retrieves the current site's domain for WMP API usage.
      *
-     * @param string $type
-     * @return string
+     * In a local or development environment, it always returns 'www.wp.rrze.fau.de'
+     * so developers can test with valid data.
+     *
+     * @return string|null The domain part of the site URL (e.g., example.com)
      */
     public static function retrieveSiteUrl(): string|null
     {
-        if (self::isDebug()) {
-            return "www.wp.rrze.fau.de";
-        } else {
-            $siteUrl = get_site_url();
-            $parsedUrl = parse_url($siteUrl);
-            return $parsedUrl['host'] ?? null;
+        if (self::isDevelopmentEnvironment()) {
+            return 'www.wp.rrze.fau.de';
         }
+
+        $siteUrl = get_site_url();
+        $parsedUrl = parse_url($siteUrl);
+
+        return $parsedUrl['host'] ?? null;
     }
 
 
-    /**
-     * Determine which url should be used and return the string
-     *
-     * @param string $type
-     * @return string
-     */
-    public static function isDebug()
-    {
-        return defined('WP_DEBUG') && WP_DEBUG;
-    }
+
+
 
 
     /**
